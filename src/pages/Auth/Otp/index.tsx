@@ -58,7 +58,7 @@ const Otp = () => {
 
   return (
     <div className='flex h-dvh flex-col place-content-center'>
-      <Card className='mx-auto max-w-sm'>
+      <Card className='mx-auto w-full max-w-md bg-white shadow-lg'>
         <CardHeader>
           <CardTitle className='text-2xl'>{t('pages.otp.title')}</CardTitle>
           <CardDescription>{t('pages.otp.description')}</CardDescription>
