@@ -47,3 +47,15 @@ export type User = {
   roleNameIt: string;
   isSuspended: boolean;
 };
+
+export type BookStatus = 'Active' | 'Inactive';
+
+export interface Book {
+  id: string;
+  bookName: string;
+  publishYear: number;
+  authors: string; // single string, not array
+  category: string;
+  addedDate: string; // ISO format yyyy-mm-dd
+  status: BookStatus;
+}

@@ -52,5 +52,34 @@
       "logs": "Activity Logs",
       "logout": "Logout"
     }
+  },
+  "filters": {
+    "bookIdName": "Book ID/Name",
+    "searchByBookIdName": "Search by Book ID/Name",
+    "publishYear": "Publish Year",
+    "selectPublishYear": "Select Publish Year",
+    "authors": "Author(s)",
+    "addedDate": "Added Date",
+    "category": "Category",
+    "status": "Status",
+    "all": "All",
+    "active": "Active",
+    "inactive": "Inactive",
+    "reset": "Reset"
+  },
+  "showing": "Showing {{start}} to {{end}} of {{total}} entries",
+
+  "book": {
+    "id": "ID",
+    "name": "Book Name",
+    "publishYear": "Publish Year",
+    "authors": "Author",
+    "category": "Category",
+    "addedDate": "Added Date",
+    "status": "Status"
+  },
+  "status": {
+    "Active": "Active",
+    "Inactive": "Inactive"
   }
 }

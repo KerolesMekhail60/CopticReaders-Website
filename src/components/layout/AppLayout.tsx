@@ -10,7 +10,7 @@ function AppLayout() {
     <GlobalProvider>
       <SideBar />
 
-      <div className='flex flex-col bg-card transition-all duration-500 md:ltr:pl-32 md:rtl:pr-20'>
+      <div className='flex flex-col bg-card transition-all duration-500 md:ltr:pl-32 md:rtl:pr-32'>
         <Header />
 
         <main className='min-h-[calc(100svh-theme(spacing.20))] overflow-y-auto bg-secondary-50 px-6 pt-6'>

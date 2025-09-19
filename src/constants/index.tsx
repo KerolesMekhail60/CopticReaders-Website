@@ -1,6 +1,7 @@
 export const TOKEN = 'coptic-readers_token';
 export const REFRESH_TOKEN = 'coptic-readers_refresh_token';
 export const MILLION = 1_000_000;
+export const EMPTY_ARRAY = [];
 
 export enum BookingStatusEnum {
   Waiting = 'Waiting',

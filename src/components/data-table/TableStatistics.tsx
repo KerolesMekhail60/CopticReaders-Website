@@ -8,19 +8,14 @@ type TableStatisticsProps = {
 
 function TableStatistics({ totalCount }: TableStatisticsProps) {
   const { pageIndex, pageSize } = useTableSearchParams();
-  const { t } = useTranslations('tables');
+  const { t } = useTranslations();
 
-  const totalShowing =
-    pageSize * pageIndex > Number(totalCount || 0)
-      ? totalCount
-      : pageSize * pageIndex;
+  const start = (pageIndex - 1) * pageSize + 1;
+  const end = Math.min(pageIndex * pageSize, totalCount || 0);
 
   return (
     <p className='text-sm text-muted-foreground'>
-      {t('showing', {
-        count: totalShowing || 0,
-        total: totalCount || pageSize,
-      })}
+      {t('showing', { start, end, total: totalCount || 0 })}
     </p>
   );
 }

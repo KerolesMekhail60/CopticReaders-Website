@@ -11,6 +11,9 @@ import ErrorPage from './pages/ErrorPage';
 import NotFound from './pages/NotFound';
 
 const Home = lazy(() => import('./pages/Home'));
+const Publisher = lazy(() => import('./pages/Publisher'));
+const Author = lazy(() => import('./pages/Author'));
+const Category = lazy(() => import('./pages/Category'));
 
 const SignIn = lazy(() => import('./pages/Auth/SignIn'));
 const ForgetPassword = lazy(() => import('./pages/Auth/ForgetPassword'));
@@ -38,19 +41,25 @@ export const router = createBrowserRouter([
       {
         path: 'category',
         element: (
-          <Suspense fallback={<MainLoader />}>{/* <Sessions /> */}</Suspense>
+          <Suspense fallback={<MainLoader />}>
+            <Category />
+          </Suspense>
         ),
       },
       {
         path: 'authors',
         element: (
-          <Suspense fallback={<MainLoader />}>{/* <Trainee /> */}</Suspense>
+          <Suspense fallback={<MainLoader />}>
+            <Author />
+          </Suspense>
         ),
       },
       {
         path: 'publisher',
         element: (
-          <Suspense fallback={<MainLoader />}>{/* <Financials /> */}</Suspense>
+          <Suspense fallback={<MainLoader />}>
+            <Publisher />
+          </Suspense>
         ),
       },
     ],

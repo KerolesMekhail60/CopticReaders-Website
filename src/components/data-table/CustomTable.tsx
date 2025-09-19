@@ -26,7 +26,7 @@ function CustomTable<TData>({
   return (
     <Table
       className={cn(
-        '[&_td]:capitalize hover:[&_thead>tr]:bg-white [&_thead]:bg-white',
+        'border [&_td]:capitalize hover:[&_thead>tr]:bg-primary-400 [&_thead]:bg-primary-500',
         className,
       )}
     >
@@ -49,7 +49,7 @@ function CustomTable<TData>({
         ))}
       </TableHeader>
 
-      <TableBody>
+      <TableBody className='bg-white'>
         {table.getRowModel().rows?.length ? (
           table.getRowModel().rows.map((row) => (
             <TableRow

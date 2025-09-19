@@ -1,44 +1,48 @@
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n, { InitOptions } from 'i18next';
+import LanguageDetector, {
+  DetectorOptions,
+} from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
 import { currency, datetime, number } from './formatters';
 
-export const supportedLngs = {
+export const supportedLngs: Record<string, string> = {
   en: 'English',
   ar: 'Arabic',
 };
 
-i18n
-  .use(HttpApi)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    // Fallback locale used when a translation is
-    // missing in the active locale. Again, use your
-    // preferred locale here.
-    fallbackLng: 'en',
+const options: InitOptions = {
+  fallbackLng: 'en',
+  supportedLngs: Object.keys(supportedLngs),
 
-    // Explicitly tell i18next our
-    // supported locales.
-    supportedLngs: Object.keys(supportedLngs),
-    // Enables useful output in the browser’s
-    // dev console.
-    debug: true,
+  detection: {
+    order: ['localStorage', 'navigator', 'htmlTag'],
+    caches: ['localStorage'],
+    lookupLocalStorage: 'i18nextLng',
 
-    // Normally, we want `escapeValue: true` as it
-    // ensures that i18next escapes any code in
-    // translation messages, safeguarding against
-    // XSS (cross-site scripting) attacks. However,
-    // React does this escaping itself, so we turn
-    // it off in i18next.
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+    checkSupportedLngs: true,
+  } as DetectorOptions,
 
-i18n.services.formatter?.add('number', number);
-i18n.services.formatter?.add('currency', currency);
-i18n.services.formatter?.add('datetime', datetime);
+  debug: process.env.NODE_ENV === 'development',
+
+  interpolation: {
+    escapeValue: false,
+  },
+};
+
+i18n.use(HttpApi).use(LanguageDetector).use(initReactI18next).init(options);
+
+if (i18n.services.formatter) {
+  i18n.services.formatter.add('number', number);
+  i18n.services.formatter.add('currency', currency);
+  i18n.services.formatter.add('datetime', datetime);
+}
+
+const storedLang = localStorage.getItem('i18nextLng');
+if (storedLang && !Object.keys(supportedLngs).includes(storedLang)) {
+  localStorage.removeItem('i18nextLng');
+  i18n.changeLanguage('en');
+}
+
 export default i18n;

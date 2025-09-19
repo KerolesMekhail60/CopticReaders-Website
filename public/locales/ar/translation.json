@@ -52,5 +52,33 @@
       "logs": "سجلات النشاط",
       "logout": "تسجيل الخروج"
     }
+  },
+  "filters": {
+    "bookIdName": "معرف الكتاب/الاسم",
+    "searchByBookIdName": "البحث عن طريق معرف الكتاب/الاسم",
+    "publishYear": "سنة النشر",
+    "selectPublishYear": "اختر سنة النشر",
+    "authors": "المؤلف(ون)",
+    "addedDate": "تاريخ الإضافة",
+    "category": "الفئة",
+    "status": "الحالة",
+    "all": "الكل",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "reset": "إعادة تعيين"
+  },
+  "showing": "عرض {{start}} إلى {{end}} من أصل {{total}} مدخلات",
+  "book": {
+    "id": "المعرف",
+    "name": "اسم الكتاب",
+    "publishYear": "سنة النشر",
+    "authors": "المؤلف",
+    "category": "التصنيف",
+    "addedDate": "تاريخ الإضافة",
+    "status": "الحالة"
+  },
+  "status": {
+    "Active": "نشط",
+    "Inactive": "غير نشط"
   }
 }
