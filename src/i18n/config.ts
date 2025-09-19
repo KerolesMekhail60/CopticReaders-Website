@@ -7,7 +7,7 @@ import { currency, datetime, number } from './formatters';
 
 export const supportedLngs = {
   en: 'English',
-  it: 'Italian',
+  ar: 'Arabic',
 };
 
 i18n

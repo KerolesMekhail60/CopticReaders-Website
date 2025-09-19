@@ -1,14 +1,6 @@
 import * as React from 'react';
 
-import {
-  Building,
-  Calendar,
-  ConciergeBell,
-  Database,
-  GalleryVerticalEnd,
-  Radio,
-  Settings,
-} from 'lucide-react';
+import { BookPlus, GalleryVerticalEnd } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { Corporate } from '@/components/layout/Corporate';
@@ -27,8 +19,6 @@ import { useUser } from '@/hooks/useUser';
 
 import useTranslations from '@/i18n/useTranslations';
 
-// This is sample data.
-
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { t } = useTranslations();
   const { user } = useUser();
@@ -45,9 +35,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     },
     navMain: [
       {
-        title: t('layout.navbar.reservations'),
+        title: t('layout.navbar.books'),
         url: '#',
-        icon: Calendar,
+        icon: BookPlus,
         items: [
           {
             title: 'Planner',
@@ -67,114 +57,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           },
         ],
       },
-      {
-        title: t('Services'),
-        url: '#',
-        icon: ConciergeBell,
-        items: [
-          {
-            title: t('ServicesTypes'),
-            url: '/services/services-types',
-          },
-          {
-            title: t('Services'),
-            url: '/services',
-          },
-          {
-            title: t('Requests'),
-            url: '/services/requests',
-          },
-          {
-            title: t('PackageItems'),
-            url: '/services/package-items',
-          },
-        ],
-      },
-      {
-        title: t('Devices'),
-        url: '#',
-        icon: Radio,
-        items: [
-          // {
-          //   title: t('Controls'),
-          //   url: '/controls',
-          // },
-          {
-            title: t('Devices'),
-            url: '/controls/devices',
-          },
-          {
-            title: t('devicesSettings'),
-            url: '/controls/settings',
-          },
-        ],
-      },
-      {
-        title: t('layout.navbar.finanicals'),
-        url: '#',
-        icon: Database,
-        items: [
-          {
-            title: t('layout.navbar.invoices'),
-            url: '/financials/invoices',
-          },
-        ],
-      },
-      {
-        title: t('layout.navbar.apartments'),
-        url: '#',
-        icon: Building,
-        items: [
-          {
-            title: t('layout.navbar.apartments'),
-            url: '/apartments',
-          },
-        ],
-      },
-
-      {
-        title: t('layout.navbar.buildings'),
-        url: '#',
-        icon: Building,
-        items: [
-          {
-            title: t('layout.navbar.buildings'),
-            url: '/buildings',
-          },
-          {
-            title: t('layout.navbar.structures'),
-            url: '/buildings/structures',
-          },
-          {
-            title: t('layout.navbar.amenitiesTypes'),
-            url: '/buildings/amenities-types',
-          },
-          {
-            title: t('layout.navbar.amenities'),
-            url: '/buildings/amenities',
-          },
-        ],
-      },
-
-      {
-        title: t('layout.navbar.settings'),
-        url: '#',
-        icon: Settings,
-        items: [
-          {
-            title: t('layout.navbar.rules'),
-            url: '/settings/rules',
-          },
-          {
-            title: t('layout.navbar.cities'),
-            url: '/settings/cities',
-          },
-          {
-            title: t('layout.navbar.guests'),
-            url: '/settings/guests',
-          },
-        ],
-      },
     ],
   };
 
@@ -188,7 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       }}
       {...props}
     >
-      <SidebarHeader className='bg-white'>
+      <SidebarHeader className='h-24 bg-white'>
         <Link to='/'>
           <Corporate />
         </Link>

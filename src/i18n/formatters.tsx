@@ -10,8 +10,8 @@ function qualifiedLngFor(lng: string): string {
   switch (lng) {
     // Use Egypt as the default formatting
     // region for Arabic.
-    case 'it':
-      return 'it-IT';
+    case 'ar':
+      return 'ar-EG';
     // Use USA as the default formatting
     // region for English.
     case 'en':
@@ -33,7 +33,7 @@ function qualifiedLngFor(lng: string): string {
 export function number(
   value: number,
   lng: string | undefined,
-  options?: Intl.NumberFormatOptions
+  options?: Intl.NumberFormatOptions,
 ): string {
   return new Intl.NumberFormat(qualifiedLngFor(lng!), options).format(value);
 }
@@ -41,7 +41,7 @@ export function number(
 export function currency(
   value: number,
   lng: string | undefined,
-  options?: Intl.NumberFormatOptions
+  options?: Intl.NumberFormatOptions,
 ): string {
   // Use the number formatter above...
   return number(value, lng, {
@@ -62,7 +62,7 @@ export function currency(
 export function datetime(
   value: Date | number,
   lng: string | undefined,
-  options?: Intl.DateTimeFormatOptions
+  options?: Intl.DateTimeFormatOptions,
 ): string {
   return new Intl.DateTimeFormat(qualifiedLngFor(lng!), options).format(value);
 }

@@ -18,7 +18,7 @@ import {
 import useLocale from './useLocale';
 import useTranslations from './useTranslations';
 
-import IT_FLAG from '/svg/it.svg';
+import Eg_FLAG from '/svg/eg.png';
 import USA_FLAG from '/svg/us.svg';
 
 export default function LocaleSwitcher() {
@@ -30,9 +30,9 @@ export default function LocaleSwitcher() {
     { label: 'English', value: 'en', icon: USA_FLAG },
 
     {
-      label: 'Italian',
-      value: 'it',
-      icon: IT_FLAG,
+      label: 'Arabic',
+      value: 'ar',
+      icon: Eg_FLAG,
     },
   ];
   return (

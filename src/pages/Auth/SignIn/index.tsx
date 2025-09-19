@@ -92,9 +92,9 @@ const SignIn = () => {
       </div>
 
       {/* Right Side - Image */}
-      <div className='my-12 hidden w-1/2 items-center justify-center rounded-full bg-gray-50 shadow-[0_0_5px_5px_rgba(255,215,0,0.1)] lg:flex'>
+      <div className='my-12 hidden w-1/2 items-center justify-center rounded-full bg-white shadow-[0_0_5px_5px_rgba(255,215,0,0.1)] lg:flex'>
         <img
-          src='/images/book.png'
+          src='/images/bible-book.png'
           alt='bible book'
           className='max-h-full max-w-full object-contain'
         />
