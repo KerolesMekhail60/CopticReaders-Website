@@ -1,20 +1,50 @@
 {
-  "login": {
-    "title": "Login",
-    "description": "Enter your email below to login to your account",
-    "forgetPassword": "Forget Password ?"
+  "shared": {
+    "appTitle": "Coptic Readers"
   },
-  "forgetPassword": {
-    "title": "Forget Password",
-    "description": "Enter the email address associated with your account."
+  "pages": {
+    "login": {
+      "title": "Login",
+      "description": "Enter your email below to login to your account",
+      "forgetPassword": "Forget Password?"
+    },
+    "forgetPassword": {
+      "title": "Forget Password",
+      "description": "Enter the email address associated with your account."
+    },
+    "otp": {
+      "title": "OTP Verification",
+      "description": "Please enter the one-time password sent to your phone."
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "description": "Enter a new password below to change your password"
+    }
   },
-  "otp": {
-    "title": "OTP Verification",
-    "description": "Please enter the one-time password sent to your phone."
-  },
-  "resetPassword": {
-    "title": "Reset Password",
-    "description": "Enter a new password below to chage your password"
+  "forms": {
+    "labels": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "placeholders": {
+      "email": "Enter your email",
+      "password": "Enter your password"
+    },
+    "buttonLabels": {
+      "login": "Login",
+      "submit": "Submit",
+      "backLogin": "Back to login"
+    },
+    "errors": {
+      "email": {
+        "required": "Email is required",
+        "invalid": "Invalid email address"
+      },
+      "password": {
+        "required": "Password is required",
+        "minLength": "Password must be at least 8 characters long"
+      }
+    }
   },
   "layout": {
     "navbar": {

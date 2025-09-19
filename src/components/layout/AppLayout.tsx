@@ -1,42 +1,23 @@
-import { ThemeProvider } from 'next-themes';
-
 import { Outlet } from 'react-router-dom';
-import { Toaster } from 'sonner';
 
-import { SidebarInset, SidebarProvider } from '../ui/sidebar';
-
-import { AppSidebar } from './app-sidebar';
-import Header from './Header';
+import Header from './header/Header';
+import SideBar from './sidebar/SideBar';
 
 import { GlobalProvider } from '@/context/useGlobalContext';
 
 function AppLayout() {
   return (
-    <ThemeProvider
-      attribute='class'
-      defaultTheme='light'
-      forcedTheme='light'
-    >
-      <GlobalProvider>
-        <SidebarProvider>
-          <AppSidebar />
+    <GlobalProvider>
+      <SideBar />
 
-          <SidebarInset className='max-h-[calc(100svh-theme(spacing.4))] overflow-x-auto shadow-none md:peer-data-[variant=inset]:shadow-none'>
-            <Header />
-            <div className='overflow-y-auto bg-neutral-10 p-6'>
-              <Outlet />
-            </div>
-          </SidebarInset>
-        </SidebarProvider>
+      <div className='flex flex-col bg-card transition-all duration-500 md:ltr:pl-32 md:rtl:pr-20'>
+        <Header />
 
-        <Toaster
-          richColors
-          position='top-right'
-          duration={3000}
-          closeButton
-        />
-      </GlobalProvider>
-    </ThemeProvider>
+        <main className='min-h-[calc(100svh-theme(spacing.20))] overflow-y-auto bg-secondary-50 px-6 pt-6'>
+          <Outlet />
+        </main>
+      </div>
+    </GlobalProvider>
   );
 }
 

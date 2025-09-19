@@ -20,25 +20,25 @@ import { useLogin } from '@/hooks/features/auth/useLogin';
 import useTranslations from '@/i18n/useTranslations';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-const schema = z.object({
-  email: z
-    .string({ required_error: 'Email is required' })
-    .email({ message: 'Invalid email address' }),
-  password: z
-    .string({ required_error: 'Password is required' })
-    .min(8, { message: 'Password must be at least 8 characters long' }),
-});
-
-type FormData = z.infer<typeof schema>;
+// Schema will be created inside component to access i18n messages
 
 const SignIn = () => {
   const { t } = useTranslations();
   const { login, isLoading } = useLogin();
 
+  const schema = z.object({
+    email: z
+      .string({ required_error: t('forms.errors.email.required') })
+      .email({ message: t('forms.errors.email.invalid') }),
+    password: z
+      .string({ required_error: t('forms.errors.password.required') })
+      .min(8, { message: t('forms.errors.password.minLength') }),
+  });
+
   const form = useForm<FormData>({
     resolver: zodResolver(schema),
   });
-
+  type FormData = z.infer<typeof schema>;
   const onSubmit = async (data: FormData) => {
     await login(data);
   };

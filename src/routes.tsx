@@ -19,6 +19,7 @@ const ResetPassword = lazy(() => import('./pages/Auth/ResetPassword'));
 
 export const router = createBrowserRouter([
   {
+    path: '/',
     element: (
       <ProtectedRoute>
         <AppLayout />
@@ -27,11 +28,29 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
+        index: true,
         element: (
           <Suspense fallback={<MainLoader />}>
             <Home />
           </Suspense>
+        ),
+      },
+      {
+        path: 'category',
+        element: (
+          <Suspense fallback={<MainLoader />}>{/* <Sessions /> */}</Suspense>
+        ),
+      },
+      {
+        path: 'authors',
+        element: (
+          <Suspense fallback={<MainLoader />}>{/* <Trainee /> */}</Suspense>
+        ),
+      },
+      {
+        path: 'publisher',
+        element: (
+          <Suspense fallback={<MainLoader />}>{/* <Financials /> */}</Suspense>
         ),
       },
     ],
