@@ -6,7 +6,7 @@ import SideBarSheet from '../sidebar/SideBarSheet';
 
 import NavMenu from './NavMenu';
 
-import { useUser } from '@/hooks/useUser';
+// import { useUser } from '@/hooks/useUser';
 
 const Header = () => {
   //const { user, isLoading: isUserLoading } = useUser();

@@ -16,6 +16,7 @@ const SideBarSheet = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   const { user, isLoading: isUserLoading } = useUser();
+  console.log('🚀 ~ user:', user);
   const [openSheet, setOpenSheet] = useState(false);
   if (!isMobile) return;
   function onClose() {
