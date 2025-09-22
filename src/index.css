@@ -66,16 +66,16 @@
 
     --radius: 0.5rem;
 
-    --primary-50: 0 100% 97%; /* very light red background */
-    --primary-100: 0 100% 90%; /* soft rose tint */
-    --primary-200: 0 100% 80%; /* light red */
-    --primary-300: 0 90% 70%; /* warm red */
-    --primary-400: 0 85% 55%; /* medium bright red */
-    --primary-500: 0 100% 44%; /* main brand color #E00000 */
-    --primary-600: 0 90% 36%; /* darker red */
-    --primary-700: 0 85% 28%; /* deep red */
-    --primary-800: 0 80% 20%; /* very dark red */
-    --primary-900: 0 75% 15%; /* almost black red */
+    --primary-50: 351 60% 97%; /* very light tint */
+    --primary-100: 351 65% 90%; /* soft rose tint */
+    --primary-200: 351 65% 80%; /* light muted red */
+    --primary-300: 351 65% 65%; /* soft red */
+    --primary-400: 351 70% 50%; /* medium red */
+    --primary-500: 351 70% 33%; /* main brand color #66121b */
+    --primary-600: 351 72% 20%; /* darker */
+    --primary-700: 351 75% 16%; /* deep red */
+    --primary-800: 351 75% 12%; /* very dark */
+    --primary-900: 351 80% 8%; /* almost black */
 
     --secondary-50: 40 60% 98%; /* very light ivory */
     --secondary-100: 40 55% 95%; /* pale beige */
