@@ -1,47 +1,112 @@
 [
   {
-    "id": "00001CR",
-    "bookName": "شخصية القديس أنبا موسى الرسول والروح الكنسي",
-    "publishYear": 1998,
-    "authors": "القمص تادرس يعقوب ملطي",
-    "category": "اباء الكنيسة الاولى، عقيدة وايمان",
-    "addedDate": "2025-05-01",
-    "status": "Active"
+    "bookId": "B0001",
+    "id": "1",
+    "name": "Theology of the Early Church",
+    "nameAr": "لاهوت الكنيسة الأولى",
+    "description": "An in-depth study of the theological foundations of the early church.",
+    "descriptionAr": "دراسة متعمقة للأسس اللاهوتية للكنيسة الأولى.",
+    "author": [
+      {
+        "id": "A1",
+        "name": "John Smith",
+        "nameAr": "جون سميث"
+      },
+      {
+        "id": "A2",
+        "name": "Mary Thomas",
+        "nameAr": "ماري توماس"
+      }
+    ],
+    "bookCatogray": [
+      {
+        "id": "C1",
+        "name": "Theology",
+        "nameAr": "لاهوت"
+      },
+      {
+        "id": "C2",
+        "name": "History",
+        "nameAr": "تاريخ"
+      }
+    ],
+    "publisher": {
+      "id": "P1",
+      "name": "Faith Press",
+      "nameAr": "مطبعة الإيمان"
+    },
+    "publisherYear": 1998,
+    "status": true,
+    "addDate": "2025-05-01"
   },
   {
-    "id": "00002CR",
-    "bookName": "سيرة القديس أنبا موسى الرسول (كتابات، وعظات)",
-    "publishYear": 2015,
-    "authors": "القمص تادرس فهيم جورج",
-    "category": "اباء الكنيسة الاولى، عقيدة وايمان، حياة وشخصيات روحية",
-    "addedDate": "2025-05-01",
-    "status": "Inactive"
+    "bookId": "B0002",
+    "id": "2",
+    "name": "Defending the Cross",
+    "nameAr": "الدفاع عن الصليب",
+    "description": "A historical and theological defense of the Cross.",
+    "descriptionAr": "دفاع تاريخي ولاهوتي عن الصليب.",
+    "author": [
+      {
+        "id": "A3",
+        "name": "Michael George",
+        "nameAr": "ميخائيل جورج"
+      }
+    ],
+    "bookCatogray": [
+      {
+        "id": "C3",
+        "name": "Apologetics",
+        "nameAr": "دفاعيات"
+      },
+      {
+        "id": "C2",
+        "name": "History",
+        "nameAr": "تاريخ"
+      }
+    ],
+    "publisher": {
+      "id": "P2",
+      "name": "Heritage Publishers",
+      "nameAr": "الناشرون التراث"
+    },
+    "publisherYear": 2011,
+    "status": false,
+    "addDate": "2025-06-10"
   },
   {
-    "id": "00003CR",
-    "bookName": "الدفاع عن الصليب",
-    "publishYear": 2011,
-    "authors": "القديس أنبا موسى الرسول",
-    "category": "اباء الكنيسة الاولى، عقيدة وايمان، تاريخ",
-    "addedDate": "2025-05-01",
-    "status": "Active"
-  },
-  {
-    "id": "00004CR",
-    "bookName": "رسائل القديس أنبا موسى الى تلاميذه وابن القديس والانبا الشهيد",
-    "publishYear": 1981,
-    "authors": "ميخائيل كامل عبد السيد",
-    "category": "دفاعيات، تاريخ",
-    "addedDate": "2025-05-01",
-    "status": "Active"
-  },
-  {
-    "id": "00005CR",
-    "bookName": "الرسائل التعليمية للقديس أنبا موسى الكبير",
-    "publishYear": 2000,
-    "authors": "القمص تادرس يعقوب ملطي",
-    "category": "اباء الكنيسة، عقيدة وايمان",
-    "addedDate": "2025-05-01",
-    "status": "Active"
+    "bookId": "B0003",
+    "id": "3",
+    "name": "Lives of the Saints",
+    "nameAr": "سير القديسين",
+    "description": "Biographies of the most influential saints in early Christianity.",
+    "descriptionAr": "سير القديسين الأكثر تأثيرًا في المسيحية المبكرة.",
+    "author": [
+      {
+        "id": "A4",
+        "name": "Anna Williams",
+        "nameAr": "آنا ويليامز"
+      }
+    ],
+    "bookCatogray": [
+      {
+        "id": "C4",
+        "name": "Spiritual Lives",
+        "nameAr": "حياة روحية"
+      },
+      {
+        "id": "C1",
+        "name": "Theology",
+        "nameAr": "لاهوت"
+      }
+    ],
+    "publisher": {
+      "id": "P3",
+      "name": "Spiritual Light Press",
+      "nameAr": "مطبعة النور الروحي"
+    },
+    "publisherYear": 2020,
+    "status": true,
+    "addDate": "2025-07-15"
   }
 ]

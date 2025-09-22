@@ -6,13 +6,13 @@ import { columns } from './book-columns';
 
 import useDataTable from '@/hooks/useDataTable';
 
-import { Book } from '@/types';
+import { BookType } from '@/types';
 
 import { EMPTY_ARRAY } from '@/constants';
 
 import bookData from '@/data/book-data.json';
 
-const data = bookData as Book[];
+const data = bookData as unknown as BookType[];
 
 function BookTable() {
   const table = useDataTable(data || EMPTY_ARRAY, columns);

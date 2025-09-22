@@ -50,7 +50,7 @@ export type User = {
 
 export type BookStatus = 'Active' | 'Inactive';
 
-export type Book = {
+export type BookType = {
   bookId: string;
   id?: string;
   image?: File[];
@@ -59,11 +59,27 @@ export type Book = {
   nameAr: string;
   description: string;
   descriptionAr: string;
-  author: string[];
-  bookCatogray: string[];
-  publisher: string;
+  author: Author[];
+  bookCatogray: Category[];
+  publisher: publisher;
   publisherYear: number;
   status: boolean;
+  addDate: string;
 };
 
-export type BookList = Book;
+export type Category = {
+  id: string;
+  name: string;
+  nameAr: string;
+};
+export type publisher = {
+  id: string;
+  name: string;
+  nameAr: string;
+};
+export type Author = {
+  id: string;
+  name: string;
+  nameAr: string;
+  image?: string;
+};

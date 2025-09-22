@@ -33,7 +33,10 @@
     "buttonLabels": {
       "login": "تسجيل الدخول",
       "submit": "إرسال",
-      "backLogin": "العودة لتسجيل الدخول"
+      "backLogin": "العودة لتسجيل الدخول",
+      "edit": "تعديل الكتاب",
+      "cancel": "إلغاء",
+      "remove": "حذف"
     },
     "errors": {
       "email": {
@@ -75,7 +78,9 @@
     "authors": "المؤلف",
     "category": "التصنيف",
     "addedDate": "تاريخ الإضافة",
-    "status": "الحالة"
+    "status": "الحالة",
+    "publisher": "الناشر",
+    "actions": "الإجراءات"
   },
   "status": {
     "Active": "نشط",
@@ -83,5 +88,15 @@
   },
   "AddNewBook": "أضف كتابًا جديدًا",
   "bookAdd": "إضافة كتاب",
-  "You can upload a maximum of 1 files": "يمكنك تحميل ملفات واحدة كحد أقصى"
+  "You can upload a maximum of 1 files": "يمكنك تحميل ملفات واحدة كحد أقصى",
+  "ImportBooks": "استيراد الكتب",
+  "Upload Excel or CSV file containing books data": "تحميل ملف Excel أو CSV يحتوي على بيانات الكتب",
+  "Select File": "حدد الملف",
+  "Change File": "تغيير الملف",
+  "Supported formats": "التنسيقات المدعومة",
+  "Please upload the downloaded template file before proceeding": "يرجى تحميل ملف القالب الذي تم تنزيله قبل المتابعة",
+  "Import  Books": "استيراد الكتب",
+  "cancel": "يلغي",
+  "remove": "حذف",
+  "EditBook": "تعديل الكتاب"
 }

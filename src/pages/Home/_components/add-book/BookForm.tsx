@@ -1,7 +1,6 @@
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
-import CustomCalender from '@/components/shared/form/CustomCalender';
 import CustomFileUploader from '@/components/shared/form/CustomFileUploader';
 import CustomImagesUploader from '@/components/shared/form/CustomImagesUploader';
 import CustomInput from '@/components/shared/form/CustomInput';
@@ -14,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { DialogClose, DialogFooter } from '@/components/ui/dialog';
 import { Form } from '@/components/ui/form';
 
-import { Book } from '@/types';
+import { BookType } from '@/types';
 
 import { AUTHORS, bookCategories, PUBLISHERS } from '@/constants';
 
@@ -26,7 +25,7 @@ const BookForm = ({
   book,
 }: {
   onClose: VoidFunction;
-  book?: Book;
+  book?: BookType;
 }) => {
   const { t } = useTranslations();
 
@@ -104,13 +103,14 @@ const BookForm = ({
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {
+      bookId: book?.bookId || '',
       name: book?.name || '',
       nameAr: book?.nameAr || '',
       description: book?.description || '',
       descriptionAr: book?.descriptionAr || '',
-      author: book?.author || [],
-      bookCatogray: book?.bookCatogray || [],
-      publisher: book?.publisher || '',
+      author: book?.author.map((author) => author.name) || [],
+      bookCatogray: book?.bookCatogray.map((author) => author.name) || [],
+      publisher: book?.publisher.id || '',
       publisherYear: book?.publisherYear,
       status: book?.status || false,
       image: book?.image || [],
@@ -132,7 +132,7 @@ const BookForm = ({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className='grid max-h-[61vh] grid-cols-1 gap-6 overflow-y-auto p-2 md:grid-cols-2'>
+        <div className='grid max-h-[500px] grid-cols-1 gap-6 overflow-y-auto p-2 md:grid-cols-2'>
           {/* Upload Section */}
           <div className='col-span-1 grid gap-4 md:col-span-2 md:grid-cols-2'>
             <CustomImagesUploader
@@ -144,7 +144,7 @@ const BookForm = ({
               label='Book File'
             />
           </div>
-          {/* Names */}
+
           <CustomInput
             fieldName='name'
             label='Book Name'
@@ -155,7 +155,7 @@ const BookForm = ({
             label='Book Name Arabic'
             placeholder='Enter your Book Name Arabic'
           />
-          {/* Descriptions */}
+
           <CustomTextarea
             fieldName='description'
             label='Book Description'

@@ -33,7 +33,10 @@
     "buttonLabels": {
       "login": "Login",
       "submit": "Submit",
-      "backLogin": "Back to login"
+      "backLogin": "Back to login",
+      "edit": "Edit Book",
+      "cancel": "Cancel",
+      "remove": "Remove"
     },
     "errors": {
       "email": {
@@ -75,7 +78,9 @@
     "authors": "Author",
     "category": "Category",
     "addedDate": "Added Date",
-    "status": "Status"
+    "status": "Status",
+    "publisher": "Publisher",
+    "actions": "Actions"
   },
   "status": {
     "Active": "Active",
@@ -85,5 +90,16 @@
   "bookAdd": "Add Book",
   "File size must be less than 4MB": "File size must be less than 4MB",
   "You can upload a maximum of 1 images": "You can upload a maximum of 1 images",
-  "You can upload a maximum of 1 files": "You can upload a maximum of 1 files"
+  "You can upload a maximum of 1 files": "You can upload a maximum of 1 files",
+  "ImportBooks": "Import Books",
+  "Import Books": "Import Books",
+  "Upload Excel or CSV file containing books data": "Upload Excel or CSV file containing books data",
+  "Change File": "Change File",
+  "Select File": "Select file",
+  "Supported formats": "Supported formats",
+  "Please upload the downloaded template file before proceeding": "Please upload the downloaded template file before proceeding",
+  "Import  Books": "Import Books",
+  "cancel": "cancel",
+  "remove": "remove",
+  "EditBook": "Edit Book"
 }

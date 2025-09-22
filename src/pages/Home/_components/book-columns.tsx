@@ -1,16 +1,20 @@
+import { ChevronsUpDown } from 'lucide-react';
+
 import { ColumnDef } from '@tanstack/react-table';
 
 import TableDateLng from '@/components/shared/TableDateLng';
 import { Button } from '@/components/ui/button';
 
-import { Book } from '@/types';
+import ActionButton from './add-book/ActionButton';
+
+import { BookType } from '@/types';
 
 import Localized from '@/i18n/Localized';
 import { cn } from '@/lib/utils';
 
-export const columns: ColumnDef<Book>[] = [
+export const columns: ColumnDef<BookType>[] = [
   {
-    accessorKey: 'id',
+    accessorKey: 'bookId',
     header: ({ column }) => (
       <Button
         variant='ghost'
@@ -20,11 +24,10 @@ export const columns: ColumnDef<Book>[] = [
         <Localized text='book.id' />
       </Button>
     ),
-    cell: ({ row }) => <p>{row.original.id}</p>,
-    enableHiding: false,
+    cell: ({ row }) => <p>{row.original.bookId}</p>,
   },
   {
-    accessorKey: 'bookName',
+    accessorKey: 'name',
     header: ({ column }) => (
       <Button
         variant='ghost'
@@ -34,10 +37,10 @@ export const columns: ColumnDef<Book>[] = [
         <Localized text='book.name' />
       </Button>
     ),
-    cell: ({ row }) => <p>{row.original.bookName}</p>,
+    cell: ({ row }) => <p>{row.original.name}</p>,
   },
   {
-    accessorKey: 'publishYear',
+    accessorKey: 'publisherYear',
     header: ({ column }) => (
       <Button
         variant='ghost'
@@ -47,10 +50,10 @@ export const columns: ColumnDef<Book>[] = [
         <Localized text='book.publishYear' />
       </Button>
     ),
-    cell: ({ row }) => <p>{row.original.publishYear}</p>,
+    cell: ({ row }) => <p>{row.original.publisherYear}</p>,
   },
   {
-    accessorKey: 'authors',
+    accessorKey: 'author',
     header: ({ column }) => (
       <Button
         variant='ghost'
@@ -60,10 +63,11 @@ export const columns: ColumnDef<Book>[] = [
         <Localized text='book.authors' />
       </Button>
     ),
-    cell: ({ row }) => <p>{row.original.authors}</p>,
+    cell: ({ row }) =>
+      row.original.author?.map((a) => a.name).join(', ') || 'N/A',
   },
   {
-    accessorKey: 'category',
+    accessorKey: 'bookCatogray',
     header: ({ column }) => (
       <Button
         variant='ghost'
@@ -73,7 +77,21 @@ export const columns: ColumnDef<Book>[] = [
         <Localized text='book.category' />
       </Button>
     ),
-    cell: ({ row }) => <p>{row.original.category}</p>,
+    cell: ({ row }) =>
+      row.original.bookCatogray?.map((c) => c.name).join(', ') || 'N/A',
+  },
+  {
+    accessorKey: 'publisher',
+    header: ({ column }) => (
+      <Button
+        variant='ghost'
+        className='hover:bg-transparent'
+        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+      >
+        <Localized text='book.publisher' />
+      </Button>
+    ),
+    cell: ({ row }) => row.original.publisher?.name || 'N/A',
   },
   {
     accessorKey: 'addedDate',
@@ -87,8 +105,8 @@ export const columns: ColumnDef<Book>[] = [
       </Button>
     ),
     cell: ({ row }) =>
-      row.original.addedDate ? (
-        <TableDateLng date={row.original.addedDate} />
+      row.original.addDate ? (
+        <TableDateLng date={row.original.addDate} />
       ) : (
         <p>N/A</p>
       ),
@@ -108,11 +126,29 @@ export const columns: ColumnDef<Book>[] = [
       <span
         className={cn(
           'font-medium',
-          row.original.status === 'Active' ? 'text-green-600' : 'text-red-600',
+          row.original.status ? 'text-green-600' : 'text-red-600',
         )}
       >
-        {row.original.status}
+        {row.original.status ? 'Active' : 'Inactive'}
       </span>
+    ),
+  },
+  {
+    accessorKey: 'actions',
+    header: () => (
+      <Button variant='ghost'>
+        <Localized text='book.actions' />
+        <ChevronsUpDown
+          className='ml-2 h-4 w-4'
+          color='#c0a871'
+        />
+      </Button>
+    ),
+    cell: ({ row }) => (
+      <ActionButton
+        book={row.original}
+        key={row.original.id}
+      />
     ),
   },
 ];
