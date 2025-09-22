@@ -80,5 +80,8 @@
   "status": {
     "Active": "نشط",
     "Inactive": "غير نشط"
-  }
+  },
+  "AddNewBook": "أضف كتابًا جديدًا",
+  "bookAdd": "إضافة كتاب",
+  "You can upload a maximum of 1 files": "يمكنك تحميل ملفات واحدة كحد أقصى"
 }

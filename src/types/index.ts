@@ -50,12 +50,20 @@ export type User = {
 
 export type BookStatus = 'Active' | 'Inactive';
 
-export interface Book {
-  id: string;
-  bookName: string;
-  publishYear: number;
-  authors: string; // single string, not array
-  category: string;
-  addedDate: string; // ISO format yyyy-mm-dd
-  status: BookStatus;
-}
+export type Book = {
+  bookId: string;
+  id?: string;
+  image?: File[];
+  file?: File[];
+  name: string;
+  nameAr: string;
+  description: string;
+  descriptionAr: string;
+  author: string[];
+  bookCatogray: string[];
+  publisher: string;
+  publisherYear: number;
+  status: boolean;
+};
+
+export type BookList = Book;

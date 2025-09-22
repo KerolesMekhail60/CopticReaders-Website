@@ -68,7 +68,6 @@
     "reset": "Reset"
   },
   "showing": "Showing {{start}} to {{end}} of {{total}} entries",
-
   "book": {
     "id": "ID",
     "name": "Book Name",
@@ -81,5 +80,10 @@
   "status": {
     "Active": "Active",
     "Inactive": "Inactive"
-  }
+  },
+  "AddNewBook": "Add New Book",
+  "bookAdd": "Add Book",
+  "File size must be less than 4MB": "File size must be less than 4MB",
+  "You can upload a maximum of 1 images": "You can upload a maximum of 1 images",
+  "You can upload a maximum of 1 files": "You can upload a maximum of 1 files"
 }

@@ -1,7 +1,6 @@
-import AddButton from '@/components/data-table/AddButton';
 import PageHeading from '@/components/shared/PageHeading';
-import { Dialog } from '@/components/ui/dialog';
 
+import BookDialog from './_components/add-book/BookDialog';
 import BookMangent from './_components/BookMangent';
 
 const Home = () => {
@@ -9,9 +8,7 @@ const Home = () => {
     <>
       <div className='mb-6 flex items-start justify-between'>
         <PageHeading text='Book Management' />
-        <Dialog>
-          <AddButton buttonLabel='Add Book' />
-        </Dialog>
+        <BookDialog />
       </div>
       <BookMangent />
     </>
