@@ -3,6 +3,7 @@ import { ChevronsUpDown } from 'lucide-react';
 import { ColumnDef } from '@tanstack/react-table';
 
 import TableDateLng from '@/components/shared/TableDateLng';
+import TableTextCell from '@/components/shared/TableTextCell';
 import { Button } from '@/components/ui/button';
 
 import ActionButton from './add-book/ActionButton';
@@ -37,7 +38,12 @@ export const columns: ColumnDef<BookType>[] = [
         <Localized text='book.name' />
       </Button>
     ),
-    cell: ({ row }) => <p>{row.original.name}</p>,
+    cell: ({ row }) => (
+      <TableTextCell
+        textAr={row.original.nameAr}
+        textEn={row.original.name}
+      />
+    ),
   },
   {
     accessorKey: 'publisherYear',
@@ -63,9 +69,25 @@ export const columns: ColumnDef<BookType>[] = [
         <Localized text='book.authors' />
       </Button>
     ),
-    cell: ({ row }) =>
-      row.original.author?.map((a) => a.name).join(', ') || 'N/A',
+    cell: ({ row }) => {
+      const authors = row.original.author;
+      if (!authors || authors.length === 0) {
+        return 'N/A';
+      }
+      return (
+        <div className='flex flex-col gap-1'>
+          {authors.map((a, i) => (
+            <TableTextCell
+              key={i}
+              textAr={a.nameAr}
+              textEn={a.name}
+            />
+          ))}
+        </div>
+      );
+    },
   },
+
   {
     accessorKey: 'bookCatogray',
     header: ({ column }) => (
@@ -77,9 +99,25 @@ export const columns: ColumnDef<BookType>[] = [
         <Localized text='book.category' />
       </Button>
     ),
-    cell: ({ row }) =>
-      row.original.bookCatogray?.map((c) => c.name).join(', ') || 'N/A',
+    cell: ({ row }) => {
+      const categories = row.original.bookCatogray;
+      if (!categories || categories.length === 0) {
+        return 'N/A';
+      }
+      return (
+        <div className='flex flex-col gap-1'>
+          {categories.map((c, i) => (
+            <TableTextCell
+              key={i}
+              textAr={c.nameAr}
+              textEn={c.name}
+            />
+          ))}
+        </div>
+      );
+    },
   },
+
   {
     accessorKey: 'publisher',
     header: ({ column }) => (
@@ -91,7 +129,12 @@ export const columns: ColumnDef<BookType>[] = [
         <Localized text='book.publisher' />
       </Button>
     ),
-    cell: ({ row }) => row.original.publisher?.name || 'N/A',
+    cell: ({ row }) => (
+      <TableTextCell
+        textAr={row.original.publisher.nameAr}
+        textEn={row.original.publisher.name}
+      />
+    ),
   },
   {
     accessorKey: 'addedDate',

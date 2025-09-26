@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "John Carter",
+    "nameAr": "جون كارتر",
+    "bio": "John is a novelist specializing in historical fiction with over 10 published works.",
+    "bioAr": "جون كاتب روايات متخصص في الرواية التاريخية وله أكثر من 10 أعمال منشورة.",
+    "imageUrl": "https://randomuser.me/api/portraits/men/45.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Emily Stone",
+    "nameAr": "إميلي ستون",
+    "bio": "Emily writes modern poetry and short stories, focusing on human emotions and nature.",
+    "bioAr": "إميلي تكتب الشعر الحديث والقصص القصيرة، وتركز على المشاعر الإنسانية والطبيعة.",
+    "imageUrl": "https://randomuser.me/api/portraits/women/32.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Ahmed Hassan",
+    "nameAr": "أحمد حسن",
+    "bio": "Ahmed is a well-known Egyptian author of philosophical and cultural essays.",
+    "bioAr": "أحمد كاتب مصري معروف بالمقالات الفلسفية والثقافية.",
+    "imageUrl": "https://randomuser.me/api/portraits/men/76.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Sophia Green",
+    "nameAr": "صوفيا غرين",
+    "bio": "Sophia is an award-winning children's book author with vibrant storytelling.",
+    "bioAr": "صوفيا مؤلفة كتب أطفال حائزة على جوائز وتتميز بأسلوب سردي نابض بالحياة.",
+    "imageUrl": "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Karim Al-Mansour",
+    "nameAr": "كريم المنصور",
+    "bio": "Karim writes science fiction novels blending technology and Middle Eastern culture.",
+    "bioAr": "كريم يكتب روايات الخيال العلمي التي تمزج بين التكنولوجيا والثقافة الشرق أوسطية.",
+    "imageUrl": "https://randomuser.me/api/portraits/men/90.jpg"
+  }
+]

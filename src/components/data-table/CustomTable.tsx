@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { flexRender, type Table as TableType } from '@tanstack/react-table';
 
 import {
@@ -23,10 +25,11 @@ function CustomTable<TData>({
   columnsLength,
   className = '',
 }: CustomTableProps<TData>) {
+  const { t } = useTranslation();
   return (
     <Table
       className={cn(
-        'border [&_td]:capitalize hover:[&_thead>tr]:bg-primary-400 [&_thead]:bg-primary-500',
+        'border [&_td]:capitalize [&_th]:text-secondary-100 rtl:[&_th]:text-right hover:[&_thead>tr]:bg-primary-500 [&_thead]:bg-primary-500',
         className,
       )}
     >
@@ -72,7 +75,7 @@ function CustomTable<TData>({
               colSpan={columnsLength}
               className='h-24 text-center'
             >
-              <Localized text='tables.noResults' />
+              <Localized text={t('No Results')} />
             </TableCell>
           </TableRow>
         )}

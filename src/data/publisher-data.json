@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Global Books Ltd.",
+    "nameAr": "الكتب العالمية المحدودة",
+    "description": "An international publishing house specializing in contemporary fiction and non-fiction.",
+    "descriptionAr": "دار نشر دولية متخصصة في الأدب المعاصر والروايات غير الخيالية.",
+    "imageUrl": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29"
+  },
+  {
+    "id": 2,
+    "name": "Cedar Press",
+    "nameAr": "دار الأرز",
+    "description": "Cedar Press publishes Middle Eastern literature and poetry with a global reach.",
+    "descriptionAr": "دار الأرز تنشر الأدب والشعر من الشرق الأوسط للعالم.",
+    "imageUrl": "https://images.unsplash.com/photo-1486308510493-aa64833634ef"
+  },
+  {
+    "id": 3,
+    "name": "Bright Minds Publishing",
+    "nameAr": "عقول مشرقة للنشر",
+    "description": "Focused on educational books and children’s learning materials.",
+    "descriptionAr": "تركز على الكتب التعليمية ومواد تعلم الأطفال.",
+    "imageUrl": "https://images.unsplash.com/photo-1529429617124-95b109e86bb8"
+  },
+  {
+    "id": 4,
+    "name": "Heritage House",
+    "nameAr": "دار التراث",
+    "description": "Heritage House is dedicated to preserving classical literature and historical works.",
+    "descriptionAr": "دار التراث مكرسة للحفاظ على الأدب الكلاسيكي والأعمال التاريخية.",
+    "imageUrl": "https://images.unsplash.com/photo-1505843513577-22bb7d21e455"
+  },
+  {
+    "id": 5,
+    "name": "Future Ink",
+    "nameAr": "حبر المستقبل",
+    "description": "A modern digital-first publisher specializing in sci-fi and fantasy genres.",
+    "descriptionAr": "ناشر عصري رقمي بالدرجة الأولى متخصص في الخيال العلمي والفانتازيا.",
+    "imageUrl": "https://images.unsplash.com/photo-1491553895911-0055eca6402d"
+  }
+]

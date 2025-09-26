@@ -61,7 +61,7 @@ export type BookType = {
   descriptionAr: string;
   author: Author[];
   bookCatogray: Category[];
-  publisher: publisher;
+  publisher: Publisher;
   publisherYear: number;
   status: boolean;
   addDate: string;
@@ -71,15 +71,22 @@ export type Category = {
   id: string;
   name: string;
   nameAr: string;
+  description?: string;
+  descriptionAr?: string;
 };
-export type publisher = {
+export type Publisher = {
   id: string;
   name: string;
   nameAr: string;
+  description?: string;
+  descriptionAr?: string;
+  imageUrl?: string;
 };
 export type Author = {
   id: string;
   name: string;
   nameAr: string;
-  image?: string;
+  imageUrl?: string;
+  bio?: string;
+  bioAr?: string;
 };

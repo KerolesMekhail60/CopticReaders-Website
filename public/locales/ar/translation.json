@@ -57,7 +57,7 @@
     }
   },
   "filters": {
-    "bookIdName": "معرف الكتاب/الاسم",
+    "bookIdName": "رقم الكتاب / الاسم",
     "searchByBookIdName": "البحث عن طريق معرف الكتاب/الاسم",
     "publishYear": "سنة النشر",
     "selectPublishYear": "اختر سنة النشر",
@@ -72,7 +72,7 @@
   },
   "showing": "عرض {{start}} إلى {{end}} من أصل {{total}} مدخلات",
   "book": {
-    "id": "المعرف",
+    "id": "رقم الكتاب",
     "name": "اسم الكتاب",
     "publishYear": "سنة النشر",
     "authors": "المؤلف",
@@ -80,6 +80,25 @@
     "addedDate": "تاريخ الإضافة",
     "status": "الحالة",
     "publisher": "الناشر",
+    "actions": "الإجراءات"
+  },
+  "author": {
+    "id": "المعرف",
+    "name": "الاسم",
+    "bio": "نبذة",
+    "edit": "تعديل المؤلف"
+  },
+  "publisher": {
+    "id": "id",
+    "name": "الاسم",
+    "description": "الوصف",
+    "edit": "تعديل الناشر"
+  },
+  "category": {
+    "id": "id",
+    "name": "الاسم",
+    "edit": "تعديل التصنيف",
+    "description": "الوصف",
     "actions": "الإجراءات"
   },
   "status": {
@@ -98,5 +117,56 @@
   "Import  Books": "استيراد الكتب",
   "cancel": "يلغي",
   "remove": "حذف",
-  "EditBook": "تعديل الكتاب"
+  "EditBook": "تعديل الكتاب",
+  "No Results": "لا نتائج",
+  "titleAuthors": "المؤلفون",
+  "titleCategories": "فئات",
+  "title": {
+    "Publisher": "الناشرين",
+    "BookManagement": "إدارة الكتب"
+  },
+  "searchBar": "البحث بالاسم",
+  "publisherAdd": "إضافة ناشر",
+  "Save": "يحفظ",
+  "Cancel": "يلغي",
+  "Publisher Image": "صورة الناشر",
+  "Publisher Name": "اسم الناشر *",
+  "Enter Publisher Name": "أدخل اسم الناشر",
+  "Publisher Name Arabic": "اسم الناشر (العربية)",
+  "Enter Publisher Name in Arabic": "أدخل اسم الناشر باللغة العربية",
+  "Publisher Description": "وصف الناشر",
+  "Enter Publisher Description": "أدخل وصف الناشر",
+  "Publisher Description Arabic": "وصف الناشر (العربية)",
+  "Enter Publisher Description in Arabic": "أدخل وصف الناشر باللغة العربية",
+  "You can upload a maximum of 1 image": "يمكنك تحميل صورة واحدة كحد أقصى",
+  "Publisher Name is required": "اسم الناشر مطلوب",
+  "Author Name is required": "اسم المؤلف مطلوب",
+  "Author Bio": "المؤلف السيرة الذاتية",
+  "Enter Author Bio": "أدخل المؤلف السيرة الذاتية",
+  "Author Bio Arabic": "المؤلف الحيوي (عربي)",
+  "Enter Author Bio in Arabic": "أدخل المؤلف الحيوي باللغة العربية",
+  "Enter Author Name in Arabic": "أدخل اسم المؤلف باللغة العربية",
+  "Author Name": "اسم المؤلف",
+  "Enter Author Name": "أدخل اسم المؤلف",
+  "Author Image": "صورة المؤلف",
+  "authorAdd": "إضافة المؤلف",
+  "Category Name is required": "اسم الفئة مطلوب",
+  "Category Name": "اسم الفئة",
+  "Enter Category Name": "أدخل اسم الفئة",
+  "Category Name Arabic": "اسم الفئة (العربية)",
+  "Enter Category Name in Arabic": "أدخل اسم الفئة باللغة العربية",
+  "Category Description": "وصف الفئة",
+  "Enter Category Description": "أدخل وصف الفئة",
+  "Category Description Arabic": "وصف الفئة العربية",
+  "Enter Category Description in Arabic": "أدخل وصف الفئة باللغة العربية",
+  "Sub Categories": "الفئات الفرعية",
+  "Sub-Category Name is required": "مطلوب اسم الفئة الفرعية",
+  "Sub-Category Name": "اسم الفئة الفرعية",
+  "Enter Sub-Category Name": "أدخل اسم الفئة الفرعية",
+  "Sub-Category Name Arabic": "فئة فرعية اسم اللغة العربية",
+  "Enter Sub-Category Name in Arabic": "أدخل اسم الفئة الفرعية باللغة العربية",
+  "Sub-Category Description": "وصف الفئة الفرعية",
+  "Enter Sub-Category Description": "أدخل وصف الفئة الفرعية",
+  "Sub-Category Description Arabic": "الفئة الفرعية الوصف العربي",
+  "Enter Sub-Category Description in Arabic": "أدخل وصف الفئة الفرعية باللغة العربية"
 }

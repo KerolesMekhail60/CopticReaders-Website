@@ -40,14 +40,14 @@ const SearchBar = ({
         type='text'
         placeholder={placeholder}
         className={cn(
-          'h-12 w-full rounded-lg border-[1px] border-secondary-100 bg-card px-10 py-3 placeholder:text-secondary-300 rtl:leading-[4]',
+          'h-12 w-full rounded-lg border-[1px] border-primary-500 bg-white px-10 py-3 placeholder:text-secondary-900 rtl:leading-[4]',
           className,
         )}
         value={search ?? searchValue}
         onChange={handleChange}
       />
 
-      <Search className='absolute left-4 top-1/2 size-5 -translate-y-1/2 text-secondary-300' />
+      <Search className='absolute left-4 top-1/2 size-5 -translate-y-1/2 text-secondary-900' />
     </div>
   );
 };

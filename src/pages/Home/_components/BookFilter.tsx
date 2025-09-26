@@ -1,5 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 
+import { Button } from '@/components/ui/button';
+
 import useTranslations from '@/i18n/useTranslations';
 
 const BookFilter = () => {
@@ -108,12 +110,7 @@ const BookFilter = () => {
           <label className='invisible text-sm font-medium'>
             {t('filters.reset')}
           </label>
-          <button
-            onClick={resetParams}
-            className='h-9 rounded-md border px-4 text-sm font-medium hover:bg-gray-100'
-          >
-            {t('filters.reset')}
-          </button>
+          <Button onClick={resetParams}>{t('filters.reset')}</Button>
         </div>
       </div>
     </div>

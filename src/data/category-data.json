@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Fiction",
+    "nameAr": "روايات",
+    "description": "Books that contain imaginative storytelling and creative narratives.",
+    "descriptionAr": "كتب تحتوي على سرد خيالي وإبداعي."
+  },
+  {
+    "id": 2,
+    "name": "Science",
+    "nameAr": "علوم",
+    "description": "Publications that explore natural phenomena, discoveries, and experiments.",
+    "descriptionAr": "منشورات تستكشف الظواهر الطبيعية والاكتشافات والتجارب."
+  },
+  {
+    "id": 3,
+    "name": "History",
+    "nameAr": "تاريخ",
+    "description": "Collections focusing on past events, civilizations, and historical figures.",
+    "descriptionAr": "مجموعات تركز على الأحداث الماضية والحضارات والشخصيات التاريخية."
+  },
+  {
+    "id": 4,
+    "name": "Children",
+    "nameAr": "أطفال",
+    "description": "Books designed for children with engaging illustrations and simple stories.",
+    "descriptionAr": "كتب مخصصة للأطفال مع رسومات جذابة وقصص بسيطة."
+  },
+  {
+    "id": 5,
+    "name": "Technology",
+    "nameAr": "تكنولوجيا",
+    "description": "Publications related to modern innovations, computing, and digital trends.",
+    "descriptionAr": "منشورات تتعلق بالابتكارات الحديثة والحوسبة والاتجاهات الرقمية."
+  }
+]

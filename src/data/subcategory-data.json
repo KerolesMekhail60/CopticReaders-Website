@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Old Testament",
+    "nameAr": "العهد القديم",
+    "description": "Books related to the Old Testament.",
+    "descriptionAr": "كتب مرتبطة بالعهد القديم."
+  },
+  {
+    "id": 2,
+    "name": "New Testament",
+    "nameAr": "العهد الجديد",
+    "description": "Books related to the New Testament.",
+    "descriptionAr": "كتب مرتبطة بالعهد الجديد."
+  },
+  {
+    "id": 3,
+    "name": "Christian Theology",
+    "nameAr": "اللاهوت المسيحي",
+    "description": "Theological studies and writings.",
+    "descriptionAr": "دراسات وكتابات لاهوتية."
+  }
+]

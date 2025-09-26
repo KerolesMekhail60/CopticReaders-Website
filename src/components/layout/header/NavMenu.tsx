@@ -20,7 +20,7 @@ import { useGlobalContext } from '@/context/useGlobalContext';
 
 import { REFRESH_TOKEN, TOKEN } from '@/constants';
 
-import avatar from '@/../public/images/user.png';
+import avatar from '@/../public/images/man.png';
 
 function NavMenu() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);

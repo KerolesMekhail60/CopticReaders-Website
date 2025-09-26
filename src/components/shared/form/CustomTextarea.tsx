@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 
+import useLocale from '@/i18n/useLocale';
 import { cn } from '@/lib/utils';
 
 type CustomTextarea = {
@@ -17,6 +18,7 @@ type CustomTextarea = {
   placeholder: string;
   className?: string;
   disabled?: boolean;
+  optional?: boolean;
 };
 
 function CustomTextarea({
@@ -25,10 +27,11 @@ function CustomTextarea({
   placeholder = '',
   className = '',
   disabled = false,
+  optional = false,
 }: CustomTextarea) {
   const form = useFormContext();
   const { isSubmitting } = form.formState;
-
+  const { isEnglish } = useLocale();
   return (
     <FormField
       control={form.control}
@@ -36,13 +39,18 @@ function CustomTextarea({
       render={({ field }) => (
         <FormItem className={className}>
           <FormLabel className='text-sm font-semibold text-neutral-900'>
-            {label}
+            {label}{' '}
+            {optional && (
+              <span className='text-sm font-normal italic text-neutral-400'>
+                {isEnglish ? '(optional)' : '(اختيارى)'}
+              </span>
+            )}
           </FormLabel>
           <FormControl>
             <Textarea
               placeholder={placeholder}
               className={cn(
-                'h-[53px] border border-neutral-100 bg-neutral-10 placeholder:text-neutral-400',
+                'h-[53px] rounded-lg border border-neutral-100 bg-neutral-10 placeholder:text-neutral-400',
                 'resize-none',
               )}
               {...field}

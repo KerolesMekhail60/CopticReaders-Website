@@ -19,19 +19,19 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-import BookForm from './BookForm';
+import PublisherForm from './add-publisher/PublisherForm';
 
-import { BookType } from '@/types';
+import { Publisher } from '@/types';
 
 import useLocale from '@/i18n/useLocale';
 import useTranslations from '@/i18n/useTranslations';
 import { cn } from '@/lib/utils';
 
 const ActionButton = ({
-  book,
+  publisher,
   className,
 }: {
-  book?: BookType;
+  publisher?: Publisher;
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
@@ -65,7 +65,7 @@ const ActionButton = ({
           <DialogTrigger asChild>
             <DropdownMenuItem>
               <Pen className='size-4' />
-              {t('forms.buttonLabels.edit')}
+              {t('publisher.edit')}
             </DropdownMenuItem>
           </DialogTrigger>
 
@@ -73,8 +73,9 @@ const ActionButton = ({
 
           <DropdownMenuItem asChild>
             <RemoveButton
-              title={isEnglish ? 'Remove Book' : 'حذف الكتاب'}
+              title={isEnglish ? 'Remove publisher' : 'حذف الناشر'}
               onDelete={handleDelete}
+              // isLoading={isDeleting}
               triggerButton={
                 <div className='flex items-center gap-2 p-2 text-sm text-error-500 hover:bg-red-500 hover:text-white'>
                   <Trash2 className='size-4' />
@@ -87,9 +88,9 @@ const ActionButton = ({
                   ? 'Are you sure you want to delete '
                   : 'هل أنت متأكد أنك تريد حذف '}
                 <span className='text-primary-500'>
-                  {isEnglish ? book?.name : book?.nameAr}
+                  {isEnglish ? publisher?.name : publisher?.nameAr}
                 </span>
-                {isEnglish ? ' from Books?' : ' من الكتب؟'}
+                {isEnglish ? ' from Publishers?' : ' من الناشرين؟'}
               </p>
             </RemoveButton>
           </DropdownMenuItem>
@@ -99,11 +100,11 @@ const ActionButton = ({
       <DialogContent className='max-h-[80vh] max-w-[900px]'>
         <DialogHeader>
           <DialogTitle className='text-lg font-bold text-secondary-900 md:text-xl lg:text-2xl xl:text-3xl'>
-            {t('EditBook')}
+            {t('publisher.edit')}
           </DialogTitle>
         </DialogHeader>
-        <BookForm
-          book={book}
+        <PublisherForm
+          publisher={publisher}
           onClose={() => setOpen(false)}
         />
       </DialogContent>
