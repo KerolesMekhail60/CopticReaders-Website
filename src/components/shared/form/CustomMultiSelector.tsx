@@ -78,7 +78,7 @@ function CustomMultiSelector({
 
                 <MultiSelectorContent className='w-full'>
                   <MultiSelectorList>
-                    {items.map(({ label, value }) => (
+                    {items?.map(({ label, value }) => (
                       <MultiSelectorItem
                         key={value}
                         value={value}

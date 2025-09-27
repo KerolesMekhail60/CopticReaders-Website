@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
 import CustomInput from '@/components/shared/form/CustomInput';
+import CustomMultiSelector from '@/components/shared/form/CustomMultiSelector';
 import CustomTextarea from '@/components/shared/form/CustomTextarea';
 import Spinner from '@/components/shared/loaders/Spinner';
 import { Button } from '@/components/ui/button';
@@ -9,6 +10,8 @@ import { DialogClose, DialogFooter } from '@/components/ui/dialog';
 import { Form } from '@/components/ui/form';
 
 import { Category } from '@/types';
+
+import { bookCategories } from '@/constants';
 
 import useTranslations from '@/i18n/useTranslations';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -29,6 +32,9 @@ const CategoryForm = ({
     nameAr: z.string().optional(),
     description: z.string().optional(),
     descriptionAr: z.string().optional(),
+    categories: z
+      .array(z.string())
+      .nonempty(t('Please select at least one category')),
   });
 
   const form = useForm<z.infer<typeof schema>>({
@@ -38,9 +44,10 @@ const CategoryForm = ({
       nameAr: category?.nameAr || '',
       description: category?.description || '',
       descriptionAr: category?.descriptionAr || '',
+      categories: [],
     },
   });
-
+  console.log(bookCategories);
   const handleCancel = () => {
     form.reset();
     onClose();
@@ -67,7 +74,15 @@ const CategoryForm = ({
             placeholder={t('Enter Category Name in Arabic')}
             optional
           />
-
+          <div className='col-span-2'>
+            <CustomMultiSelector
+              fieldName='categories'
+              label={t('Book Sub-Category')}
+              placeholder={t('Select Book Sub-Categories')}
+              items={bookCategories}
+              className='w-full'
+            />
+          </div>
           <CustomTextarea
             fieldName='description'
             label={t('Category Description')}

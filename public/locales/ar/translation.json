@@ -168,5 +168,8 @@
   "Sub-Category Description": "وصف الفئة الفرعية",
   "Enter Sub-Category Description": "أدخل وصف الفئة الفرعية",
   "Sub-Category Description Arabic": "الفئة الفرعية الوصف العربي",
-  "Enter Sub-Category Description in Arabic": "أدخل وصف الفئة الفرعية باللغة العربية"
+  "Enter Sub-Category Description in Arabic": "أدخل وصف الفئة الفرعية باللغة العربية",
+  "Please select at least one category": "الرجاء تحديد فئة واحدة على الأقل",
+  "Book Sub-Category": "كتاب الفئة الفرعية",
+  "Select Book Sub-Categories": "حدد كتاب الفئات الفرعية"
 }
