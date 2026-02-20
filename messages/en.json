@@ -1,0 +1,258 @@
+{
+  "navbar": {
+    "login": "Login",
+    "menu": "Menu",
+    "menuDescription": "Choose a page to visit",
+    "logoAlt": "Reads Coptic Logo"
+  },
+  "userMenu": {
+    "profile": "Profile",
+    "favorites": "Favorites",
+    "logout": "Logout",
+    "logoutSuccess": "Logged out successfully"
+  },
+  "pages": {
+    "home": "Home",
+    "books": "Books",
+    "about": "About",
+    "contact": "Contact",
+    "donation": "Donation",
+    "profile": {
+      "title": "My Profile",
+      "updateSuccess": "Profile updated successfully",
+      "updateFailed": "Failed to update profile",
+      "personalInformation": "Personal Information",
+      "pages": {
+        "profile": {
+          "title": "My Profile"
+        }
+      }
+    },
+    "otp": {
+      "desc": "Enter the 5-digit OTP code sent to your email",
+      "resend": {
+        "resendAgain": "Resend code",
+        "resendEmail": "Resend email",
+        "success": "OTP resent successfully"
+      }
+    },
+    "resetPassword": {
+      "enterNewPassword": "Enter your new password"
+    },
+    "signUp": {
+      "personalInformation": "Personal Information",
+      "alreadyHaveAccount": "Already have an account?",
+      "loginToAccount": "Login"
+    },
+    "forgotPassword": {
+      "enterRegisteredEmail": "Enter your registered email address to receive a password reset code"
+    },
+    "changePassword": {
+      "title": "Change Password"
+    },
+    "login": "Login"
+  },
+  "contactPage": {
+    "form": {
+      "title": "Contact Us"
+    }
+  },
+  "loginPage": {
+    "personalInformation": "Personal Information",
+    "forgottenPassword": "Forgot Password",
+    "resetPassword": "Reset Password",
+    "dontHaveAccount": "Don't have account",
+    "createAccount": "Create Account",
+    "title": "Login"
+  },
+  "login": {
+    "title": "Login",
+    "description": "Login to access your account",
+    "logoAlt": "Reads Coptic Logo",
+    "fields": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Email"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Password"
+      }
+    },
+    "errors": {
+      "email": {
+        "required": "Email is required",
+        "format": "Invalid email address"
+      },
+      "password": {
+        "required": "Password is required",
+        "format": "Password format is invalid"
+      }
+    },
+    "buttons": {
+      "signIn": "Sign in"
+    },
+    "forgotPassword": {
+      "text": "Forgot your password?",
+      "link": "Reset password"
+    },
+    "noAccount": {
+      "text": "Don't have an account?",
+      "link": "Create account"
+    },
+    "toasts": {
+      "success": "Logged in successfully",
+      "invalidCredentials": "Email or password is incorrect",
+      "somethingWentWrong": "Something went wrong"
+    }
+  },
+  "books": {
+    "recentBooks": "Recent Books",
+    "popularBooks": "Popular Books",
+    "holyBible": "Holy Bible",
+    "showAll": "Show All",
+    "noBooks": "No books available",
+    "searchPlaceholder": "Search by....",
+    "selectAuthor": "Select Author",
+    "selectCategory": "Select Category",
+    "filterBooks": "Filter Books",
+    "search": "Search",
+    "reset": "Reset",
+    "filter": "Filter",
+    "viewBook": "View Book",
+    "siteSections": "Site Sections",
+    "all": "All",
+    "noBooksAvailable": "No Books Available",
+    "noBooksMessage": "Sorry, there are no books available in this section at moment. Please try again later or browse other sections.",
+    "addToFavorites": "Add To Favorites",
+    "removeFromFavorites": "Remove From Favorites",
+    "untitled": "Untitled",
+    "unknownAuthor": "Unknown Author"
+  },
+  "forms": {
+    "labels": {
+      "fullName": "Full Name",
+      "jobTitle": "Church Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "message": "Message",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "confirmNewPassword": "Confirm New Password",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "phone": "Phone Number",
+      "church": "Church",
+      "password": "Password",
+      "profilePicture": "Profile Picture",
+      "country": "Country (optional)",
+      "city": "City (optional)",
+      "area": "Area (optional)"
+    },
+    "placeholders": {
+      "fullName": "Enter your full name",
+      "jobTitle": "Enter church name",
+      "email": "Enter your email",
+      "phoneNumber": "Enter your phone number",
+      "message": "Write your message here",
+      "password": "Enter your password",
+      "confirmPassword": "Confirm your password",
+      "confirmNewPassword": "Confirm your new password",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "phone": "Phone Number",
+      "city": "City (Optional)",
+      "area": "Area (Optional)",
+      "church": "Church (Optional)",
+      "currentPassword": "Enter current password",
+      "newPassword": "Enter new password",
+      "country": "Select Country"
+    },
+    "buttonsLabels": {
+      "sendMessage": "Send Message",
+      "signIn": "Sign in",
+      "signUp": "Sign Up",
+      "resetPassword": "Reset Password",
+      "savePassword": "Save Password",
+      "changePassword": "Change Password",
+      "updateProfile": "Update Profile",
+      "updatePassword": "Update Password",
+      "saveChanges": "Save Changes",
+      "save": "Save",
+      "cancel": "Cancel",
+      "send": "Send",
+      "homePage": "Home Page"
+    },
+    "noOptions": "No options available",
+    "errors": {
+      "fullName": "Full name is required",
+      "jobTitle": "Church name is required",
+      "phoneNumber": "Please enter a valid phone number",
+      "message": "Message is required",
+      "firstName": {
+        "required": "First name is required",
+        "minLength": "First name must be at least 2 characters"
+      },
+      "lastName": {
+        "required": "Last name is required",
+        "minLength": "Last name must be at least 2 characters"
+      },
+      "email": {
+        "required": "Email is required",
+        "format": "Invalid email address"
+      },
+      "phone": {
+        "required": "Phone number is required",
+        "format": "Invalid phone number"
+      },
+      "password": {
+        "required": "Password is required",
+        "format": "Password must contain at least 8 characters including uppercase, lowercase, number and special character",
+        "minLength": "Password must be at least 8 characters"
+      },
+      "confirmPassword": {
+        "required": "Please confirm your password",
+        "match": "Passwords do not match"
+      },
+      "newPasswordSameAsCurrent": "New password cannot be the same as the current password",
+      "passwordsMustMatch": "New password and confirm password must match",
+      "otp": "OTP must be at least 5 digits",
+      "emailRequired": "Email is required",
+      "emailOrOtpMissing": "Email or OTP is missing",
+      "authenticationRequired": "Authentication required. Please login again."
+    },
+    "toasts": {
+      "signUpSuccess": "OTP sent to your email",
+      "verifySuccess": "Login successful",
+      "resendSuccess": "OTP resent successfully",
+      "forgetPasswordSuccess": "OTP sent to your email",
+      "resetPasswordSuccess": "Password reset successfully",
+      "changePasswordSuccess": "Password changed successfully",
+      "somethingWentWrong": "Something went wrong"
+    }
+  },
+  "bookCard": {
+    "untitled": "Untitled",
+    "unknownAuthor": "Unknown author",
+    "addToFavorites": "Add to favorites",
+    "removeFromFavorites": "Remove from favorites",
+    "addedToFavorites": "Added to favorites",
+    "removedFromFavorites": "Removed from favorites",
+    "errorAddingToFavorites": "Failed to add to favorites",
+    "errorRemovingFromFavorites": "Failed to remove from favorites",
+    "loginRequired": "Please login to add books to favorites"
+  },
+  "buttonsLabels": {
+    "updatePassword": "Update Password"
+  },
+  "favorites": {
+    "title": "My Favorites",
+    "subtitle": "Your collection of favorite books",
+    "loadError": "Failed to load favorites",
+    "tryAgain": "Try Again",
+    "noFavoritesTitle": "No Favorites Yet",
+    "noFavoritesMessage": "Start building your collection by adding books to your favorites!",
+    "browseBooks": "Browse Books"
+  }
+}

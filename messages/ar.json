@@ -1,0 +1,258 @@
+{
+  "navbar": {
+    "login": "تسجيل الدخول",
+    "menu": "قائمة",
+    "menuDescription": "اختر الصفحة التي تريد زيارتها",
+    "logoAlt": "شعار قرّاء قبطي"
+  },
+  "userMenu": {
+    "profile": "الملف الشخصي",
+    "favorites": "المفضلة",
+    "logout": "تسجيل الخروج",
+    "logoutSuccess": "تم تسجيل الخروج بنجاح"
+  },
+  "pages": {
+    "home": "الرئيسية",
+    "books": "الكتب",
+    "about": "عن الموقع",
+    "contact": "تواصل معنا",
+    "donation": "التبرع",
+    "profile": {
+      "title": "الملف الشخصي",
+      "updateSuccess": "تم تحديث الملف الشخصي بنجاح",
+      "updateFailed": "فشل تحديث الملف الشخصي",
+      "personalInformation": "معلومات شخصية",
+      "pages": {
+        "profile": {
+          "title": "حسابي"
+        }
+      }
+    },
+    "otp": {
+      "desc": "أدخل كود التأكيد المكون من 5 خانات المُرسل إلى بريدك الإلكتروني",
+      "resend": {
+        "resendAgain": "إعادة إرسال",
+        "resendEmail": "إعادة إرسال",
+        "success": "تم إرسال الكود"
+      }
+    },
+    "resetPassword": {
+      "enterNewPassword": "أدخل كلمة المرور الجديدة"
+    },
+    "signUp": {
+      "personalInformation": "معلومات شخصية",
+      "alreadyHaveAccount": "لديك حساب بالفعل؟",
+      "loginToAccount": "تسجيل الدخول"
+    },
+    "forgotPassword": {
+      "enterRegisteredEmail": "أدخل بريدك الإلكتروني المسجل لاستلام كود إعادة تعيين كلمة المرور"
+    },
+    "changePassword": {
+      "title": "تغيير كلمة المرور"
+    },
+    "login": "تسجيل الدخول"
+  },
+  "contactPage": {
+    "form": {
+      "title": "تواصل معنا"
+    }
+  },
+  "loginPage": {
+    "personalInformation": "معلومات شخصية",
+    "forgottenPassword": "هل نسيت كلمة المرور",
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "dontHaveAccount": "ليس لديك حساب",
+    "createAccount": "إنشاء حساب",
+    "title": "تسجيل الدخول"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "description": "سجل الدخول للوصول إلى حسابك",
+    "logoAlt": "شعار قرّاء قبطي",
+    "fields": {
+      "email": {
+        "label": "البريد الإلكتروني",
+        "placeholder": "البريد الإلكتروني"
+      },
+      "password": {
+        "label": "كلمة المرور",
+        "placeholder": "كلمة المرور"
+      }
+    },
+    "errors": {
+      "email": {
+        "required": "البريد الإلكتروني مطلوب",
+        "format": "صيغة البريد الإلكتروني غير صحيحة"
+      },
+      "password": {
+        "required": "كلمة المرور مطلوبة",
+        "format": "صيغة كلمة المرور غير صحيحة"
+      }
+    },
+    "buttons": {
+      "signIn": "تسجيل الدخول"
+    },
+    "forgotPassword": {
+      "text": "هل نسيت كلمة المرور؟",
+      "link": "إعادة تعيين كلمة المرور"
+    },
+    "noAccount": {
+      "text": "ليس لديك حساب؟",
+      "link": "إنشاء حساب"
+    },
+    "toasts": {
+      "success": "تم تسجيل الدخول بنجاح",
+      "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+      "somethingWentWrong": "حدث خطأ ما"
+    }
+  },
+  "books": {
+    "recentBooks": "أحدث الكتب",
+    "popularBooks": "أشهر الكتب",
+    "holyBible": "الكتاب المقدس",
+    "showAll": "عرض الكل",
+    "noBooks": "لا توجد كتب متاحة",
+    "searchPlaceholder": "ابحث عن ....",
+    "selectAuthor": "اختار المؤلف",
+    "selectCategory": "اختار الفئة",
+    "filterBooks": "فلترة الكتب",
+    "search": "بحث",
+    "reset": "إعادة تعيين",
+    "filter": "فلترة",
+    "viewBook": "عرض الكتاب",
+    "siteSections": "أقسام الموقع",
+    "all": "الكل",
+    "noBooksAvailable": "لا توجد كتب متاحة",
+    "noBooksMessage": "عذراً، لا توجد كتب متاحة في هذا القسم حالياً. يرجى المحاولة مرة أخرى لاحقاً أو تصفح الأقسام الأخرى.",
+    "addToFavorites": "أضف إلى المفضلة",
+    "removeFromFavorites": "إزالة من المفضلة",
+    "untitled": "بدون عنوان",
+    "unknownAuthor": "مؤلف غير معروف"
+  },
+  "forms": {
+    "labels": {
+      "fullName": "الاسم الكامل",
+      "jobTitle": "اسم الكنيسة",
+      "email": "البريد الإلكتروني",
+      "phoneNumber": "رقم الهاتف",
+      "message": "الرسالة",
+      "currentPassword": "كلمة المرور الحالية",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "confirmNewPassword": "تأكيد كلمة المرور الجديدة",
+      "lastName": "اسم العائلة",
+      "firstName": "الاسم الأول",
+      "phone": "رقم التليفون",
+      "church": "كنيسة",
+      "password": "كلمة المرور",
+      "profilePicture": "صورة الملف الشخصي",
+      "country": "البلد (اختياري)",
+      "city": "المدينة (اختياري)",
+      "area": "المنطقة (اختياري)"
+    },
+    "placeholders": {
+      "fullName": "اكتب اسمك الكامل",
+      "jobTitle": "اكتب اسم الكنيسة",
+      "email": "اكتب بريدك الإلكتروني",
+      "phoneNumber": "اكتب رقم الهاتف",
+      "message": "اكتب رسالتك هنا",
+      "password": "أدخل كلمة المرور الخاصة بك",
+      "confirmPassword": "أكد كلمة المرور الخاصة بك",
+      "confirmNewPassword": "أكد كلمة المرور الجديدة",
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "phone": "رقم الهاتف",
+      "city": "المدينة (اختياري)",
+      "area": "المنطقة (اختياري)",
+      "church": "الكنيسة (اختياري)",
+      "currentPassword": "أدخل كلمة المرور الحالية",
+      "newPassword": "أدخل كلمة المرور الجديدة",
+      "country": "اختر البلد"
+    },
+    "buttonsLabels": {
+      "sendMessage": "إرسال",
+      "signIn": "تسجيل الدخول",
+      "signUp": "تسجيل",
+      "resetPassword": "إعادة تعيين كلمة المرور",
+      "savePassword": "حفظ كلمة المرور",
+      "changePassword": "تغيير كلمة المرور",
+      "updateProfile": "تحديث الملف الشخصي",
+      "updatePassword": "تغيير كلمة المرور",
+      "saveChanges": "حفظ التغييرات",
+      "save": "حفظ",
+      "cancel": "الغاء",
+      "send": "إرسال",
+      "homePage": "الصفحة الرئيسية"
+    },
+    "noOptions": "لا توجد خيارات متاحة",
+    "errors": {
+      "fullName": "الاسم الكامل مطلوب",
+      "jobTitle": "اسم الكنيسة مطلوب",
+      "phoneNumber": "من فضلك أدخل رقم هاتف صحيح",
+      "message": "الرسالة مطلوبة",
+      "firstName": {
+        "required": "الاسم الأول مطلوب",
+        "minLength": "الاسم الأول يجب أن يكون 2 أحرف على الأقل"
+      },
+      "lastName": {
+        "required": "اسم العائلة مطلوب",
+        "minLength": "اسم العائلة يجب أن يكون 2 أحرف على الأقل"
+      },
+      "email": {
+        "required": "البريد الإلكتروني مطلوب",
+        "format": "صيغة البريد الإلكتروني غير صحيحة"
+      },
+      "phone": {
+        "required": "رقم الهاتف مطلوب",
+        "format": "رقم هاتف غير صحيح"
+      },
+      "password": {
+        "required": "كلمة المرور مطلوبة",
+        "format": "كلمة المرور يجب أن تحتوي على 8 أحرف على الأقل تشمل حرف كبير، حرف صغير، رقم وحرف خاص",
+        "minLength": "كلمة المرور يجب أن تكون 8 أحرف على الأقل"
+      },
+      "confirmPassword": {
+        "required": "من فضلك أكد كلمة المرور",
+        "match": "كلمات المرور غير متطابقة"
+      },
+      "newPasswordSameAsCurrent": "كلمة المرور الجديدة لا يمكن أن تكون مطابقة لكلمة المرور الحالية",
+      "passwordsMustMatch": "كلمة المرور الجديدة وتأكيد كلمة المرور يجب أن يكونا متطابقين",
+      "otp": "كود التأكيد يجب أن يكون 5 خانات على الأقل",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailOrOtpMissing": "البريد الإلكتروني أو كود التأكيد مفقود",
+      "authenticationRequired": "مطلوب المصادقة. يرجى تسجيل الدخول مرة أخرى."
+    },
+    "toasts": {
+      "signUpSuccess": "تم إرسال كود التأكيد إلى بريدك الإلكتروني",
+      "verifySuccess": "تم تسجيل الدخول بنجاح",
+      "resendSuccess": "تم إرسال الكود",
+      "forgetPasswordSuccess": "تم إرسال كود التأكيد إلى بريدك الإلكتروني",
+      "resetPasswordSuccess": "تم إعادة تعيين كلمة المرور بنجاح",
+      "changePasswordSuccess": "تم تغيير كلمة المرور بنجاح",
+      "somethingWentWrong": "حدث خطأ ما"
+    }
+  },
+  "bookCard": {
+    "untitled": "بدون عنوان",
+    "unknownAuthor": "مؤلف غير معروف",
+    "addToFavorites": "إضافة إلى المفضلة",
+    "removeFromFavorites": "إزالة من المفضلة",
+    "addedToFavorites": "تمت الإضافة إلى المفضلة",
+    "removedFromFavorites": "تمت الإزالة من المفضلة",
+    "errorAddingToFavorites": "فشل في الإضافة إلى المفضلة",
+    "errorRemovingFromFavorites": "فشل في الإزالة من المفضلة",
+    "loginRequired": "يرجى تسجيل الدخول لإضافة الكتب إلى المفضلة"
+  },
+  "buttonsLabels": {
+    "updatePassword": "تغيير"
+  },
+  "favorites": {
+    "title": "المفضلة",
+    "subtitle": "مجموعة الكتب المفضلة لديك",
+    "loadError": "فشل في تحميل المفضلة",
+    "tryAgain": "حاول مرة أخرى",
+    "noFavoritesTitle": "لا توجد كتب مفضلة بعد",
+    "noFavoritesMessage": "ابدأ في بناء مجموعتك بإضافة الكتب إلى المفضلة!",
+    "browseBooks": "تصفح الكتب"
+  }
+}

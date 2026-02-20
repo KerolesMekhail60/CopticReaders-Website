@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Updated to use your HSL color values */
+    --background: 0 0 99%; /* Very light rose background */
+    --foreground: 351 70% 20%; /* Dark red for text */
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 351 70% 20%; /* Dark red for card text */
+    --popover: 0 0% 100%; /* White popovers */
+    --popover-foreground: 351 70% 20%; /* Dark red for popover text */
+    --primary: 351 70% 33%; /* Your main brand color #66121b */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 40 35% 65%; /* Your muted gold */
+    --secondary-foreground: 351 70% 20%; /* Dark red text on gold */
+    --muted: 40 30% 90%; /* Light gold for muted */
+    --muted-foreground: 351 50% 40%; /* Medium red for muted text */
+    --accent: 40 40% 80%; /* Light gold accent */
+    --accent-foreground: 351 70% 20%; /* Dark red for accent text */
+    --destructive: 0 84% 60%; /* Standard red for destructive */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+    --border: 40 30% 80%; /* Light gold border */
+    --input: 40 30% 80%; /* Light gold input borders */
+    --ring: 351 70% 33%; /* Primary color for focus rings */
+
+    /* Chart colors using your palette */
+    --chart-1: 351 70% 33%; /* Primary red */
+    --chart-2: 40 35% 65%; /* Secondary gold */
+    --chart-3: 351 65% 50%; /* Medium red */
+    --chart-4: 40 25% 50%; /* Rich bronze */
+    --chart-5: 351 60% 70%; /* Light rose */
+
+    --radius: 0.5rem;
+
+    --primary-50: 351 60% 97%; /* very light tint */
+    --primary-100: 351 65% 90%; /* soft rose tint */
+    --primary-200: 351 65% 75%; /* light muted red */
+    --primary-300: 351 70% 55%; /* soft red */
+    --primary-400: 351 70% 40%; /* medium red */
+    --primary-500: 351 70% 24%; /* main brand color #66121B */
+    --primary-600: 351 72% 20%; /* darker */
+    --primary-700: 351 75% 16%; /* deep red */
+    --primary-800: 351 75% 12%; /* very dark */
+    --primary-900: 351 80% 8%; /* almost black */
+
+    --secondary-50: 40 60% 98%; /* very light ivory */
+    --secondary-100: 40 55% 95%; /* pale beige */
+    --secondary-200: 40 50% 90%; /* light sand */
+    --secondary-300: 40 45% 85%; /* golden beige */
+    --secondary-400: 40 40% 75%; /* soft gold */
+    --secondary-500: 32 70% 85%; /* #F3D9BC */
+    --secondary-600: 40 30% 60%; /* your main gold tone */
+    --secondary-700: 40 25% 50%; /* richer bronze */
+    --secondary-800: 40 20% 40%; /* dark caramel */
+    --secondary-900: 40 15% 30%; /* deep brown-gold */
+
+    --ps-neutral-50: 0 0% 93%;
+    --ps-neutral-100: 0 0% 77%;
+    --ps-neutral-200: 0 0% 65%;
+    --ps-neutral-300: 0 0% 50%;
+    --ps-neutral-400: 0 0% 40%;
+    --ps-neutral-500: 0 0% 25%;
+    --ps-neutral-600: 0 0% 22%;
+    --ps-neutral-700: 0 0% 17%;
+    --ps-neutral-800: 0 0% 13%;
+    --ps-neutral-900: 0 0% 11%;
+
+    --error-50: 0 85% 95%;
+    --error-100: 0 85% 85%;
+    --error-200: 0 85% 75%;
+    --error-300: 0 85% 65%;
+    --error-400: 0 85% 55%;
+    --error-500: 0 85% 45%;
+    --error-600: 0 85% 35%;
+    --error-700: 0 85% 25%;
+    --error-800: 0 85% 15%;
+    --error-900: 0 85% 10%;
+  }
+
+  .dark {
+    /* Dark mode using your HSL colors */
+    --background: 351 80% 5%; /* Very dark red background */
+    --foreground: 40 35% 90%; /* Light gold text */
+    --card: 351 75% 8%; /* Dark red cards */
+    --card-foreground: 40 35% 90%; /* Gold text on cards */
+    --popover: 351 75% 8%; /* Dark red popovers */
+    --popover-foreground: 40 35% 90%; /* Gold text on popovers */
+    --primary: 40 35% 65%; /* Gold becomes primary in dark mode */
+    --primary-foreground: 351 70% 20%; /* Dark red text on gold */
+    --secondary: 351 70% 25%; /* Muted red for secondary */
+    --secondary-foreground: 40 35% 90%; /* Gold text on secondary */
+    --muted: 351 70% 15%; /* Dark muted areas */
+    --muted-foreground: 40 25% 70%; /* Softer gold for muted text */
+    --accent: 351 65% 20%; /* Dark accent */
+    --accent-foreground: 40 35% 90%; /* Gold text on accent */
+    --destructive: 0 84% 60%; /* Same destructive color */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+    --border: 351 65% 20%; /* Dark red borders */
+    --input: 351 65% 20%; /* Dark red input borders */
+    --ring: 40 35% 65%; /* Gold focus rings in dark mode */
+
+    /* Chart colors for dark mode */
+    --chart-1: 40 35% 65%; /* Gold for chart 1 */
+    --chart-2: 351 65% 40%; /* Muted red for chart 2 */
+    --chart-3: 40 25% 50%; /* Bronze for chart 3 */
+    --chart-4: 351 60% 30%; /* Dark red for chart 4 */
+    --chart-5: 40 30% 70%; /* Light gold for chart 5 */
+
+    /* Your HSL color scales for dark mode (inverted) */
+    --primary-50: 351 80% 8%; /* almost black */
+    --primary-100: 351 75% 12%; /* very dark */
+    --primary-200: 351 75% 16%; /* deep red */
+    --primary-300: 351 72% 20%; /* darker */
+    --primary-400: 351 70% 33%; /* main brand color */
+    --primary-500: 351 70% 50%; /* medium red */
+    --primary-600: 351 65% 65%; /* soft red */
+    --primary-700: 351 65% 80%; /* light muted red */
+    --primary-800: 351 65% 90%; /* soft rose tint */
+    --primary-900: 351 60% 97%; /* very light tint */
+
+    --secondary-50: 40 15% 30%; /* deep brown-gold */
+    --secondary-100: 40 20% 40%; /* dark caramel */
+    --secondary-200: 40 25% 50%; /* richer bronze */
+    --secondary-300: 40 30% 60%; /* main gold tone */
+    --secondary-400: 40 35% 65%; /* muted gold */
+    --secondary-500: 40 40% 75%; /* soft gold */
+    --secondary-600: 40 45% 85%; /* golden beige */
+    --secondary-700: 40 50% 90%; /* light sand */
+    --secondary-800: 40 55% 95%; /* pale beige */
+    --secondary-900: 40 60% 98%; /* very light ivory */
+
+    /* Neutral and error colors for dark mode */
+    --ps-neutral-50: 0 0% 11%;
+    --ps-neutral-100: 0 0% 13%;
+    --ps-neutral-200: 0 0% 17%;
+    --ps-neutral-300: 0 0% 22%;
+    --ps-neutral-400: 0 0% 25%;
+    --ps-neutral-500: 0 0% 40%;
+    --ps-neutral-600: 0 0% 50%;
+    --ps-neutral-700: 0 0% 65%;
+    --ps-neutral-800: 0 0% 77%;
+    --ps-neutral-900: 0 0% 93%;
+
+    --error-50: 0 85% 10%;
+    --error-100: 0 85% 15%;
+    --error-200: 0 85% 25%;
+    --error-300: 0 85% 35%;
+    --error-400: 0 85% 45%;
+    --error-500: 0 85% 55%;
+    --error-600: 0 85% 65%;
+    --error-700: 0 85% 75%;
+    --error-800: 0 85% 85%;
+    --error-900: 0 85% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans';
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.container {
+  @apply px-4 md:px-[29px] lg:px-[72px];
+}
+
+/* For Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.3em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--secondary-400)); /* Using your soft gold */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--secondary-500)); /* Muted gold on hover */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::selection {
+  color: hsl(var(--primary-50)); /* Very light rose text */
+  background-color: hsl(var(--primary-500)); /* Your muted gold background */
+}
+
+/* Additional utility classes for direct HSL usage */
+@layer utilities {
+  .bg-primary-500 {
+    background-color: hsl(var(--primary-500));
+  }
+
+  .text-primary-500 {
+    color: hsl(var(--primary-500));
+  }
+
+  .bg-secondary-500 {
+    background-color: hsl(var(--secondary-500));
+  }
+
+  .text-secondary-500 {
+    color: hsl(var(--secondary-500));
+  }
+
+  .border-primary-200 {
+    border-color: hsl(var(--primary-200));
+  }
+
+  .border-secondary-200 {
+    border-color: hsl(var(--secondary-200));
+  }
+
+  /* Add utilities for all shades */
+  .bg-primary-50 {
+    background-color: hsl(var(--primary-50));
+  }
+  .bg-primary-100 {
+    background-color: hsl(var(--primary-100));
+  }
+  .bg-primary-200 {
+    background-color: hsl(var(--primary-200));
+  }
+  .bg-primary-300 {
+    background-color: hsl(var(--primary-300));
+  }
+  .bg-primary-400 {
+    background-color: hsl(var(--primary-400));
+  }
+  .bg-primary-500 {
+    background-color: hsl(var(--primary-500));
+  }
+  .bg-primary-600 {
+    background-color: hsl(var(--primary-600));
+  }
+  .bg-primary-700 {
+    background-color: hsl(var(--primary-700));
+  }
+  .bg-primary-800 {
+    background-color: hsl(var(--primary-800));
+  }
+  .bg-primary-900 {
+    background-color: hsl(var(--primary-900));
+  }
+
+  .bg-secondary-50 {
+    background-color: hsl(var(--secondary-50));
+  }
+  .bg-secondary-100 {
+    background-color: hsl(var(--secondary-100));
+  }
+  .bg-secondary-200 {
+    background-color: hsl(var(--secondary-200));
+  }
+  .bg-secondary-300 {
+    background-color: hsl(var(--secondary-300));
+  }
+  .bg-secondary-400 {
+    background-color: hsl(var(--secondary-400));
+  }
+  .bg-secondary-500 {
+    background-color: hsl(var(--secondary-500));
+  }
+  .bg-secondary-600 {
+    background-color: hsl(var(--secondary-600));
+  }
+  .bg-secondary-700 {
+    background-color: hsl(var(--secondary-700));
+  }
+  .bg-secondary-800 {
+    background-color: hsl(var(--secondary-800));
+  }
+  .bg-secondary-900 {
+    background-color: hsl(var(--secondary-900));
+  }
+}
+/* Global CSS to fix PDF rendering issues */
+.react-pdf__Page {
+  display: flex !important;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.react-pdf__Page__canvas {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Ensure the document container doesn't overflow */
+.react-pdf__Document {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

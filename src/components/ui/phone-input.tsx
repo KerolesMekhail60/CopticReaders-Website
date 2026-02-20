@@ -13,7 +13,7 @@ import {
   CommandItem,
   CommandList,
 } from '@/components/ui/command';
-import { Input, InputProps } from '@/components/ui/input';
+import { Input } from '@/components/ui/input';
 import {
   Popover,
   PopoverContent,
@@ -55,19 +55,20 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
           {...props}
         />
       );
-    }
+    },
   );
 PhoneInput.displayName = 'PhoneInput';
 
-const InputComponent = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, ...props }, ref) => (
-    <Input
-      className={cn('rounded-e-lg rounded-s-none', className)}
-      {...props}
-      ref={ref}
-    />
-  )
-);
+const InputComponent = React.forwardRef<
+  HTMLInputElement,
+  React.ComponentProps<'input'>
+>(({ className, ...props }, ref) => (
+  <Input
+    className={cn('h-[53px] rounded-e-2xl rounded-s-none', className)}
+    {...props}
+    ref={ref}
+  />
+));
 InputComponent.displayName = 'InputComponent';
 
 type CountrySelectOption = { label: string; value: RPNInput.Country };
@@ -89,7 +90,7 @@ const CountrySelect = ({
     (country: RPNInput.Country) => {
       onChange(country);
     },
-    [onChange]
+    [onChange],
   );
 
   return (
@@ -98,18 +99,24 @@ const CountrySelect = ({
         <Button
           type='button'
           variant={'outline'}
-          className={cn('flex gap-1 rounded-e-none rounded-s-lg px-3')}
+          className={cn(
+            'flex h-[53px] gap-1 rounded-e-none rounded-s-2xl border-input px-4 py-4',
+          )}
           disabled={disabled}
         >
-          <FlagComponent country={value} countryName={value} />
+          <FlagComponent
+            country={value}
+            countryName={value}
+          />
           <ChevronsUpDown
             className={cn(
-              '-mr-2 h-4 w-4 opacity-50',
-              disabled ? 'hidden' : 'opacity-100'
+              'h-4 w-4 opacity-50 ltr:-mr-2 rtl:mr-2',
+              disabled ? 'hidden' : 'opacity-100',
             )}
           />
         </Button>
       </PopoverTrigger>
+
       <PopoverContent className='w-[300px] p-0'>
         <Command>
           <CommandList>
@@ -131,14 +138,14 @@ const CountrySelect = ({
                       />
                       <span className='flex-1 text-sm'>{option.label}</span>
                       {option.value && (
-                        <span className='text-foreground/50 text-sm'>
+                        <span className='text-sm text-foreground/50'>
                           {`+${RPNInput.getCountryCallingCode(option.value)}`}
                         </span>
                       )}
                       <CheckIcon
                         className={cn(
                           'ml-auto h-4 w-4',
-                          option.value === value ? 'opacity-100' : 'opacity-0'
+                          option.value === value ? 'opacity-100' : 'opacity-0',
                         )}
                       />
                     </CommandItem>
@@ -156,7 +163,7 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
   const Flag = flags[country];
 
   return (
-    <span className='bg-foreground/20 [&_svg]:size-auto flex h-4 w-6 overflow-hidden rounded-sm'>
+    <span className='flex h-4 w-6 overflow-hidden rounded-sm bg-foreground/20 [&_svg]:size-auto'>
       {Flag && <Flag title={countryName} />}
     </span>
   );
