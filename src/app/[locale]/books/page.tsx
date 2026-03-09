@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { getLocale } from 'next-intl/server';
 
@@ -5,12 +6,49 @@ import BooksClient from './BooksClient';
 
 import { getAllDataParallel } from '@/utils/api';
 
+import { getSiteUrl } from '@/lib/site';
+
 type SearchParams = {
   CategoryIds?: string | string[];
   PageNumber?: string;
   PageSize?: string;
   Search?: string;
 };
+
+type BooksPageProps = {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<SearchParams>;
+};
+
+export async function generateMetadata({
+  params,
+}: BooksPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const isArabic = locale === 'ar';
+  const siteUrl = getSiteUrl();
+
+  return {
+    title: isArabic ? 'الكتب' : 'Books',
+    description: isArabic
+      ? 'تصفح مكتبة الكتب القبطية المتاحة للقراءة.'
+      : 'Browse the Coptic books library available for reading.',
+    alternates: {
+      canonical: `/${locale}/books`,
+      languages: {
+        ar: `${siteUrl}/ar/books`,
+        en: `${siteUrl}/en/books`,
+      },
+    },
+    openGraph: {
+      title: isArabic ? 'الكتب | Coptic Readers' : 'Books | Coptic Readers',
+      description: isArabic
+        ? 'تصفح مكتبة الكتب القبطية المتاحة للقراءة.'
+        : 'Browse the Coptic books library available for reading.',
+      url: `${siteUrl}/${locale}/books`,
+      type: 'website',
+    },
+  };
+}
 
 function buildBooksQuery(params?: SearchParams) {
   if (!params) return '';
@@ -34,11 +72,7 @@ function buildBooksQuery(params?: SearchParams) {
   return query.toString();
 }
 
-async function Books({
-  searchParams,
-}: {
-  searchParams: Promise<SearchParams>;
-}) {
+async function Books({ searchParams }: BooksPageProps) {
   const locale = await getLocale();
 
   // 🔑 REQUIRED in Next.js 15
@@ -71,7 +105,6 @@ async function Books({
       headers,
     },
   );
-  console.log("🚀 ~ Books ~ categoriesResponse:", categoriesResponse)
 
   // Normalize books response - handle both nested and flat structures
   let normalizedBooks = null;

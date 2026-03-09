@@ -1,5 +1,6 @@
 import React from 'react';
 
+import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 
@@ -15,12 +16,19 @@ import { getAllData } from '@/utils/api';
 import BookPlaceholder from '@/../public/images/book-placeholder.jpg';
 import { Locale } from '@/i18n/i18n.config';
 import { encryptUrlToToken } from '@/lib/secure-link';
+import { getSiteUrl } from '@/lib/site';
 
 interface BookDetailProps {
   params: Promise<{
     id: string;
     locale: Locale;
   }>;
+}
+
+const siteUrl = getSiteUrl();
+
+function buildBookUrl(locale: Locale, id: string) {
+  return `${siteUrl}/${locale}/books/${id}`;
 }
 
 const labels = {
@@ -56,15 +64,7 @@ const labels = {
   },
 };
 
-const BookDetail = async ({ params }: BookDetailProps) => {
-  const { id, locale } = await params;
-  const t = labels[locale];
-
-  // Get token from cookies for authenticated requests
-  const cookieStore = await cookies();
-  const token = cookieStore.get('coptic_reader_access_token')?.value;
-
-  // Build headers - include Authorization if token exists
+async function fetchBookById(id: string, locale: Locale, token?: string) {
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     'Accept-Language': locale,
@@ -74,12 +74,64 @@ const BookDetail = async ({ params }: BookDetailProps) => {
     headers['Authorization'] = `Bearer ${token}`;
   }
 
+  return getAllData(`books/${id}/localized`, { headers });
+}
+
+export async function generateMetadata({
+  params,
+}: BookDetailProps): Promise<Metadata> {
+  const { id, locale } = await params;
+
+  try {
+    const book = await fetchBookById(id, locale);
+    const title = book?.title || (locale === 'ar' ? 'تفاصيل كتاب' : 'Book Details');
+    const description =
+      book?.description ||
+      (locale === 'ar'
+        ? 'تفاصيل كتاب من مكتبة Coptic Readers.'
+        : 'Book details from the Coptic Readers library.');
+
+    return {
+      title,
+      description,
+      alternates: {
+        canonical: buildBookUrl(locale, id),
+        languages: {
+          ar: buildBookUrl('ar', id),
+          en: buildBookUrl('en', id),
+        },
+      },
+      openGraph: {
+        title,
+        description,
+        type: 'article',
+        url: buildBookUrl(locale, id),
+        images: book?.coverUrl ? [{ url: book.coverUrl }] : undefined,
+      },
+    };
+  } catch {
+    return {
+      title: locale === 'ar' ? 'الكتاب غير موجود' : 'Book not found',
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+}
+
+const BookDetail = async ({ params }: BookDetailProps) => {
+  const { id, locale } = await params;
+  const t = labels[locale];
+
+  // Get token from cookies for authenticated requests
+  const cookieStore = await cookies();
+  const token = cookieStore.get('coptic_reader_access_token')?.value;
+
   /* ------------------------------------------------------------------ */
   /* 1️⃣ Fetch book details                                              */
   /* ------------------------------------------------------------------ */
-  const book = await getAllData(`books/${id}/localized`, {
-    headers,
-  });
+  const book = await fetchBookById(id, locale, token);
 
   if (!book) {
     return (
@@ -145,17 +197,52 @@ const BookDetail = async ({ params }: BookDetailProps) => {
   /* 5️⃣ Fetch recommended books                                          */
   /* ------------------------------------------------------------------ */
   const bookResponse = browseEndpoint
-    ? await getAllData(browseEndpoint, { headers })
+    ? await getAllData(browseEndpoint, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept-Language': locale,
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+      })
     : null;
 
   const recommendedBooks = bookResponse?.result ?? [];
-  console.log('🚀 ~ BookDetail ~ recommendedBooks:', recommendedBooks);
+  const bookUrl = buildBookUrl(locale, id);
+
+  const bookSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    name: book.title,
+    description: book.description,
+    inLanguage: locale,
+    author: book.firstAuthor?.name
+      ? {
+          '@type': 'Person',
+          name: book.firstAuthor.name,
+        }
+      : undefined,
+    image: book.coverUrl || undefined,
+    url: bookUrl,
+    datePublished: book.publishYear ? `${book.publishYear}-01-01` : undefined,
+    publisher: book.publisher?.name
+      ? {
+          '@type': 'Organization',
+          name: book.publisher.name,
+        }
+      : undefined,
+  };
 
   /* ------------------------------------------------------------------ */
   /* 6️⃣ Render                                                         */
   /* ------------------------------------------------------------------ */
   return (
     <section className='container mx-auto my-8 px-4 md:my-14'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(bookSchema),
+        }}
+      />
       <div className='grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-4'>
         {/* COVER */}
         <div className='col-span-1'>
@@ -198,9 +285,7 @@ const BookDetail = async ({ params }: BookDetailProps) => {
             />
             <ShareButton
               bookTitle={book.title}
-              bookUrl={
-                typeof window !== 'undefined' ? window.location.href : ''
-              }
+              bookUrl={bookUrl}
               shareLabel={t.shareButton}
               locale={locale}
             />

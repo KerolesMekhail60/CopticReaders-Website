@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import { Open_Sans, Tajawal } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
@@ -31,11 +30,6 @@ const tajawal = Tajawal({
   subsets: ['arabic'],
   weight: ['200', '300', '400', '500', '700', '800', '900'],
 });
-
-export const metadata: Metadata = {
-  title: 'Coptic Readers',
-  description: 'Coptic Readers',
-};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

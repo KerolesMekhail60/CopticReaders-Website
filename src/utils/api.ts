@@ -1,4 +1,47 @@
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const PUBLIC_REVALIDATE_SECONDS = 300;
+
+function hasAuthorizationHeader(headers?: HeadersInit) {
+  if (!headers) return false;
+
+  if (headers instanceof Headers) {
+    return headers.has('authorization') || headers.has('Authorization');
+  }
+
+  if (Array.isArray(headers)) {
+    return headers.some(
+      ([key]) => key.toLowerCase() === 'authorization',
+    );
+  }
+
+  return Object.keys(headers).some(
+    (key) => key.toLowerCase() === 'authorization',
+  );
+}
+
+function withSmartCache(options: RequestInit = {}): RequestInit {
+  const method = (options.method || 'GET').toUpperCase();
+  const hasAuth = hasAuthorizationHeader(options.headers);
+
+  if (method === 'GET' && !hasAuth) {
+    const nextOptions = (options as RequestInit & {
+      next?: { revalidate?: number | false; tags?: string[] };
+    }).next;
+
+    return {
+      ...options,
+      next: {
+        ...nextOptions,
+        revalidate: nextOptions?.revalidate ?? PUBLIC_REVALIDATE_SECONDS,
+      },
+    };
+  }
+
+  return {
+    ...options,
+    cache: 'no-store',
+  };
+}
 
 export function updateSearchParams(key: string, value: string) {
   const searchParams = new URLSearchParams(location.search);
@@ -27,10 +70,15 @@ export function deleteSearchParams(paramName: string, paramValue: string) {
 }
 //? API
 export async function getAllData(endpoint: string, options: RequestInit = {}) {
+  if (!apiUrl) {
+    throw new Error('NEXT_PUBLIC_API_URL is not configured');
+  }
+
   const url = `${apiUrl}/${endpoint}`;
+  const fetchOptions = withSmartCache(options);
 
   try {
-    const res = await fetch(url, options);
+    const res = await fetch(url, fetchOptions);
 
     if (!res.ok)
       throw new Error(
